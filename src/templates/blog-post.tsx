@@ -1,4 +1,4 @@
-import heroStyles from '../components/hero.module.css'
+import heroStyles from '@components/Hero.module.scss'
 import { Layout } from '@components/Layout'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'

@@ -5,11 +5,12 @@ import get from 'lodash/get'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import styles from './blog.module.css'
+import styles from './blog.module.scss'
 
 const BlogIndex = ({ data }: PageProps) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
+  console.log(styles)
 
   return (
     <Layout>

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-import styles from './navigation.module.css'
+import styles from './Navigation.module.scss'
 
 export const Navigation = () => (
   <nav role="navigation">
