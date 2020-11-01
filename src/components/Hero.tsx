@@ -1,7 +1,7 @@
-import React from "react";
-import Img from "gatsby-image";
+import Img from 'gatsby-image'
+import React from 'react'
 
-import styles from "./hero.module.css";
+import styles from './hero.module.css'
 
 export const Hero = ({ data }: any) => (
   <div className={styles.hero}>
@@ -16,4 +16,4 @@ export const Hero = ({ data }: any) => (
       <p>{data.shortBio.shortBio}</p>
     </div>
   </div>
-);
+)

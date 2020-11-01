@@ -1,10 +1,12 @@
-import React, { ReactNode } from "react";
-import "./base.css";
-import { Container } from "./Container";
-import { Navigation } from "./Navigation";
+import './base.css'
+
+import React, { ReactNode } from 'react'
+
+import { Container } from './Container'
+import { Navigation } from './Navigation'
 
 interface LayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -13,5 +15,5 @@ export const Layout = ({ children }: LayoutProps) => {
       <Navigation />
       {children}
     </Container>
-  );
-};
+  )
+}

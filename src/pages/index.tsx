@@ -1,19 +1,20 @@
-import React from "react";
-import { PageProps, graphql } from "gatsby";
-import get from "lodash/get";
-import { Helmet } from "react-helmet";
-import { Hero } from "../components/Hero";
-import { Layout } from "../components/Layout";
-import { ArticlePreview } from "../components/ArticlePreview";
+import { PageProps, graphql } from 'gatsby'
+import get from 'lodash/get'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+
+import { ArticlePreview } from '../components/ArticlePreview'
+import { Hero } from '../components/Hero'
+import { Layout } from '../components/Layout'
 
 const RootIndex = ({ data, location }: PageProps) => {
-  const siteTitle = get(data, "site.siteMetadata.title");
-  const posts = get(data, "allContentfulBlogPost.edges");
-  const [author] = get(data, "allContentfulPerson.edges");
+  const siteTitle = get(data, 'site.siteMetadata.title')
+  const posts = get(data, 'allContentfulBlogPost.edges')
+  const [author] = get(data, 'allContentfulPerson.edges')
 
   return (
     <Layout>
-      <div style={{ background: "#fff" }}>
+      <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
         <div className="wrapper">
@@ -24,16 +25,16 @@ const RootIndex = ({ data, location }: PageProps) => {
                 <li key={node.slug}>
                   <ArticlePreview article={node} />
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default RootIndex;
+export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
@@ -81,4 +82,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
