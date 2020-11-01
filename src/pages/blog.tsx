@@ -1,13 +1,13 @@
+import { ArticlePreview } from '@components/ArticlePreview'
+import { Layout } from '@components/Layout'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { ArticlePreview } from '../components/ArticlePreview'
-import { Layout } from '../components/Layout'
 import styles from './blog.module.css'
 
-const BlogIndex = ({ data, location }: PageProps) => {
+const BlogIndex = ({ data }: PageProps) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
 

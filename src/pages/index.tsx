@@ -1,13 +1,12 @@
+import { ArticlePreview } from '@components/ArticlePreview'
+import { Hero } from '@components/Hero'
+import { Layout } from '@components/Layout'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { ArticlePreview } from '../components/ArticlePreview'
-import { Hero } from '../components/Hero'
-import { Layout } from '../components/Layout'
-
-const RootIndex = ({ data, location }: PageProps) => {
+const RootIndex = ({ data }: PageProps) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
   const [author] = get(data, 'allContentfulPerson.edges')
