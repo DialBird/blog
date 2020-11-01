@@ -12,6 +12,12 @@ export const Navigation = () => (
       <li className={styles.navigationItem}>
         <Link to="/blog/">Blog</Link>
       </li>
+      <li className={styles.navigationItem}>
+        <Link to="/products/">Products</Link>
+      </li>
+      <li className={styles.navigationItem}>
+        <Link to="/features/">Features</Link>
+      </li>
     </ul>
   </nav>
 )
