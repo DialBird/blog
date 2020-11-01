@@ -1,12 +1,13 @@
 import { ArticlePreview } from '@components/ArticlePreview'
 import { Hero } from '@components/Hero'
 import { Layout } from '@components/Layout'
+import { HomeQuery } from '@graphqlTypes'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const RootIndex = ({ data }: PageProps) => {
+const RootIndex = ({ data }: PageProps<HomeQuery>) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
   const [author] = get(data, 'allContentfulPerson.edges')
@@ -17,6 +18,8 @@ const RootIndex = ({ data }: PageProps) => {
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
         <div className="wrapper">
+          <h2 className="section-headline">About</h2>
+          <p>keisuke taniguchi</p>
           <h2 className="section-headline">Recent articles</h2>
           <ul className="article-list">
             {posts.map(({ node }: any) => {
@@ -36,7 +39,7 @@ const RootIndex = ({ data }: PageProps) => {
 export default RootIndex
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query Home {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

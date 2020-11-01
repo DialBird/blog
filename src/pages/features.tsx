@@ -1,6 +1,7 @@
 import { ArticlePreview } from '@components/ArticlePreview'
 import { Hero } from '@components/Hero'
 import { Layout } from '@components/Layout'
+import { FeaturesQuery } from '@graphqlTypes'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
@@ -8,7 +9,7 @@ import { Helmet } from 'react-helmet'
 
 import styles from './features.module.scss'
 
-const FeaturesIndex = ({ data }: PageProps) => {
+const FeaturesIndex = ({ data }: PageProps<FeaturesQuery>) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const features = get(data, 'allContentfulBlogPost.edges')
 
@@ -37,7 +38,7 @@ const FeaturesIndex = ({ data }: PageProps) => {
 export default FeaturesIndex
 
 export const pageQuery = graphql`
-  query FeaturesIndexQuery {
+  query Features {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

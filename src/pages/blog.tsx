@@ -1,5 +1,6 @@
 import { ArticlePreview } from '@components/ArticlePreview'
 import { Layout } from '@components/Layout'
+import { BlogQuery } from '@graphqlTypes'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
@@ -7,7 +8,7 @@ import { Helmet } from 'react-helmet'
 
 import styles from './blog.module.scss'
 
-const BlogIndex = ({ data }: PageProps) => {
+const BlogIndex = ({ data }: PageProps<BlogQuery>) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
 
@@ -36,7 +37,7 @@ const BlogIndex = ({ data }: PageProps) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  query Blog {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

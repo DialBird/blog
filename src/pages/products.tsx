@@ -1,6 +1,7 @@
 import { ArticlePreview } from '@components/ArticlePreview'
 import { Hero } from '@components/Hero'
 import { Layout } from '@components/Layout'
+import { ProductsQuery } from '@graphqlTypes'
 import { PageProps, graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
@@ -8,7 +9,7 @@ import { Helmet } from 'react-helmet'
 
 import styles from './products.module.scss'
 
-const ProductsIndex = ({ data }: PageProps) => {
+const ProductsIndex = ({ data }: PageProps<ProductsQuery>) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const products = get(data, 'allContentfulBlogPost.edges')
 
@@ -37,7 +38,7 @@ const ProductsIndex = ({ data }: PageProps) => {
 export default ProductsIndex
 
 export const pageQuery = graphql`
-  query ProductsIndexQuery {
+  query Products {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
