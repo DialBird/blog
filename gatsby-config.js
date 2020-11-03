@@ -40,14 +40,20 @@ module.exports = {
       options: {
         aliases: {
           '@components': 'src/components',
-          '@graphqlTypes': 'src/__generated__/graphqlTypes',
+          '@graphqlTypes': '__generated__/graphqlTypes',
         },
       },
     },
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        fileName: `./src/__generated__/graphqlTypes.ts`,
+        codegenConfig: { maybeValue: 'T | undefined' },
+        codegenPlugins: [
+          {
+            resolve: 'typescript',
+          },
+        ],
+        fileName: `./__generated__/graphqlTypes.ts`,
       },
     },
     {

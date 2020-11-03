@@ -1,4 +1,4 @@
-export type Maybe<T> = T | null;
+export type Maybe<T> = T | undefined;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -5288,6 +5288,9 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___version'
   | 'pluginCreator___pluginOptions___aliases____components'
   | 'pluginCreator___pluginOptions___aliases____graphqlTypes'
+  | 'pluginCreator___pluginOptions___codegenConfig___maybeValue'
+  | 'pluginCreator___pluginOptions___codegenPlugins'
+  | 'pluginCreator___pluginOptions___codegenPlugins___resolve'
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___spaceId'
   | 'pluginCreator___pluginOptions___accessToken'
@@ -5480,6 +5483,9 @@ export type SitePluginFieldsEnum =
   | 'version'
   | 'pluginOptions___aliases____components'
   | 'pluginOptions___aliases____graphqlTypes'
+  | 'pluginOptions___codegenConfig___maybeValue'
+  | 'pluginOptions___codegenPlugins'
+  | 'pluginOptions___codegenPlugins___resolve'
   | 'pluginOptions___fileName'
   | 'pluginOptions___spaceId'
   | 'pluginOptions___accessToken'
@@ -5599,6 +5605,8 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   aliases?: Maybe<SitePluginPluginOptionsAliases>;
+  codegenConfig?: Maybe<SitePluginPluginOptionsCodegenConfig>;
+  codegenPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsCodegenPlugins>>>;
   fileName?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
@@ -5616,8 +5624,30 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
   _graphqlTypes?: Maybe<StringQueryOperatorInput>;
 };
 
+export type SitePluginPluginOptionsCodegenConfig = {
+  maybeValue?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsCodegenConfigFilterInput = {
+  maybeValue?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsCodegenPlugins = {
+  resolve?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsCodegenPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsCodegenPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsCodegenPluginsFilterInput>;
+};
+
 export type SitePluginPluginOptionsFilterInput = {
   aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>;
+  codegenConfig?: Maybe<SitePluginPluginOptionsCodegenConfigFilterInput>;
+  codegenPlugins?: Maybe<SitePluginPluginOptionsCodegenPluginsFilterListInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
