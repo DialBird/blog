@@ -25,9 +25,10 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Keisuke Blog',
+    siteUrl: 'https://coolookoo.work',
+    description: 'this is keisuke blog',
   },
-  pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-scss-typescript',
@@ -47,7 +48,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        codegenConfig: { maybeValue: 'T | undefined' },
         codegenPlugins: [
           {
             resolve: 'typescript',
