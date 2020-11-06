@@ -30,6 +30,14 @@ module.exports = {
     description: 'this is keisuke blog',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Keisuke Portfolio',
+        short_name: 'Keisuke',
+        start_url: '/',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-scss-typescript',
     'gatsby-plugin-sharp',
