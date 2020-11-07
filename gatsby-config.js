@@ -41,6 +41,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-scss-typescript',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',

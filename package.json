@@ -34,6 +34,7 @@
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
+    "babel-preset-gatsby": "^0.5.16",
     "contentful-import": "^7.8.6",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "import-sort-style-module": "^6.0.0",

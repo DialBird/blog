@@ -77,6 +77,7 @@ export type ContentfulAboutAboutMeTextNode = Node & {
   children: Array<Node>;
   internal: Internal;
   aboutMe?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulAboutAboutMeTextNodeSys>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -195,6 +196,7 @@ export type ContentfulAboutAboutMeTextNodeFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'aboutMe'
+  | 'sys___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___excerpt'
@@ -255,6 +257,7 @@ export type ContentfulAboutAboutMeTextNodeFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   aboutMe?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulAboutAboutMeTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -270,6 +273,14 @@ export type ContentfulAboutAboutMeTextNodeGroupConnection = {
 export type ContentfulAboutAboutMeTextNodeSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulAboutAboutMeTextNodeFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulAboutAboutMeTextNodeSys = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAboutAboutMeTextNodeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulAboutConnection = {
@@ -466,6 +477,9 @@ export type ContentfulAboutFieldsEnum =
   | 'socialLinks___about___profile___id'
   | 'socialLinks___about___profile___children'
   | 'socialLinks___about___profile___contentful_id'
+  | 'socialLinks___about___profile___spaceId'
+  | 'socialLinks___about___profile___createdAt'
+  | 'socialLinks___about___profile___updatedAt'
   | 'socialLinks___about___profile___title'
   | 'socialLinks___about___profile___description'
   | 'socialLinks___about___profile___node_locale'
@@ -491,6 +505,7 @@ export type ContentfulAboutFieldsEnum =
   | 'socialLinks___about___contentful_id'
   | 'socialLinks___about___createdAt'
   | 'socialLinks___about___updatedAt'
+  | 'socialLinks___about___sys___type'
   | 'socialLinks___about___sys___revision'
   | 'socialLinks___about___node_locale'
   | 'socialLinks___about___childContentfulAboutAboutMeTextNode___id'
@@ -500,6 +515,7 @@ export type ContentfulAboutFieldsEnum =
   | 'socialLinks___contentful_id'
   | 'socialLinks___createdAt'
   | 'socialLinks___updatedAt'
+  | 'socialLinks___sys___type'
   | 'socialLinks___sys___revision'
   | 'socialLinks___node_locale'
   | 'profile___id'
@@ -541,6 +557,9 @@ export type ContentfulAboutFieldsEnum =
   | 'profile___internal___owner'
   | 'profile___internal___type'
   | 'profile___contentful_id'
+  | 'profile___spaceId'
+  | 'profile___createdAt'
+  | 'profile___updatedAt'
   | 'profile___file___url'
   | 'profile___file___details___size'
   | 'profile___file___fileName'
@@ -548,6 +567,8 @@ export type ContentfulAboutFieldsEnum =
   | 'profile___title'
   | 'profile___description'
   | 'profile___node_locale'
+  | 'profile___sys___type'
+  | 'profile___sys___revision'
   | 'profile___fixed___base64'
   | 'profile___fixed___tracedSVG'
   | 'profile___fixed___aspectRatio'
@@ -648,12 +669,17 @@ export type ContentfulAboutFieldsEnum =
   | 'projects___logo___internal___owner'
   | 'projects___logo___internal___type'
   | 'projects___logo___contentful_id'
+  | 'projects___logo___spaceId'
+  | 'projects___logo___createdAt'
+  | 'projects___logo___updatedAt'
   | 'projects___logo___file___url'
   | 'projects___logo___file___fileName'
   | 'projects___logo___file___contentType'
   | 'projects___logo___title'
   | 'projects___logo___description'
   | 'projects___logo___node_locale'
+  | 'projects___logo___sys___type'
+  | 'projects___logo___sys___revision'
   | 'projects___logo___fixed___base64'
   | 'projects___logo___fixed___tracedSVG'
   | 'projects___logo___fixed___aspectRatio'
@@ -728,6 +754,9 @@ export type ContentfulAboutFieldsEnum =
   | 'projects___about___profile___id'
   | 'projects___about___profile___children'
   | 'projects___about___profile___contentful_id'
+  | 'projects___about___profile___spaceId'
+  | 'projects___about___profile___createdAt'
+  | 'projects___about___profile___updatedAt'
   | 'projects___about___profile___title'
   | 'projects___about___profile___description'
   | 'projects___about___profile___node_locale'
@@ -753,6 +782,7 @@ export type ContentfulAboutFieldsEnum =
   | 'projects___about___contentful_id'
   | 'projects___about___createdAt'
   | 'projects___about___updatedAt'
+  | 'projects___about___sys___type'
   | 'projects___about___sys___revision'
   | 'projects___about___node_locale'
   | 'projects___about___childContentfulAboutAboutMeTextNode___id'
@@ -762,6 +792,7 @@ export type ContentfulAboutFieldsEnum =
   | 'projects___contentful_id'
   | 'projects___createdAt'
   | 'projects___updatedAt'
+  | 'projects___sys___type'
   | 'projects___sys___revision'
   | 'projects___node_locale'
   | 'aboutMe___id'
@@ -803,6 +834,7 @@ export type ContentfulAboutFieldsEnum =
   | 'aboutMe___internal___owner'
   | 'aboutMe___internal___type'
   | 'aboutMe___aboutMe'
+  | 'aboutMe___sys___type'
   | 'aboutMe___childMarkdownRemark___id'
   | 'aboutMe___childMarkdownRemark___frontmatter___title'
   | 'aboutMe___childMarkdownRemark___excerpt'
@@ -836,6 +868,7 @@ export type ContentfulAboutFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -881,6 +914,7 @@ export type ContentfulAboutFieldsEnum =
   | 'childContentfulAboutAboutMeTextNode___internal___owner'
   | 'childContentfulAboutAboutMeTextNode___internal___type'
   | 'childContentfulAboutAboutMeTextNode___aboutMe'
+  | 'childContentfulAboutAboutMeTextNode___sys___type'
   | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
   | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___frontmatter___title'
   | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
@@ -952,6 +986,7 @@ export type ContentfulAboutSortInput = {
 };
 
 export type ContentfulAboutSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulAboutSysContentType>;
 };
@@ -979,6 +1014,7 @@ export type ContentfulAboutSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulAboutSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulAboutSysContentTypeFilterInput>;
 };
@@ -989,10 +1025,14 @@ export type ContentfulAsset = Node & {
   children: Array<Node>;
   internal: Internal;
   contentful_id?: Maybe<Scalars['String']>;
+  spaceId?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
   file?: Maybe<ContentfulAssetFile>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   node_locale?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulAssetSys>;
   fixed?: Maybe<ContentfulFixed>;
   /** @deprecated Resolutions was deprecated in Gatsby v2. It's been renamed to "fixed" https://example.com/write-docs-and-fix-this-example-link */
   resolutions?: Maybe<ContentfulResolutions>;
@@ -1000,6 +1040,22 @@ export type ContentfulAsset = Node & {
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes?: Maybe<ContentfulSizes>;
   resize?: Maybe<ContentfulResize>;
+};
+
+
+export type ContentfulAssetCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulAssetUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -1175,6 +1231,9 @@ export type ContentfulAssetFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'contentful_id'
+  | 'spaceId'
+  | 'createdAt'
+  | 'updatedAt'
   | 'file___url'
   | 'file___details___size'
   | 'file___details___image___width'
@@ -1184,6 +1243,8 @@ export type ContentfulAssetFieldsEnum =
   | 'title'
   | 'description'
   | 'node_locale'
+  | 'sys___type'
+  | 'sys___revision'
   | 'fixed___base64'
   | 'fixed___tracedSVG'
   | 'fixed___aspectRatio'
@@ -1265,10 +1326,14 @@ export type ContentfulAssetFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
   file?: Maybe<ContentfulAssetFileFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulAssetSysFilterInput>;
   fixed?: Maybe<ContentfulFixedFilterInput>;
   resolutions?: Maybe<ContentfulResolutionsFilterInput>;
   fluid?: Maybe<ContentfulFluidFilterInput>;
@@ -1288,6 +1353,16 @@ export type ContentfulAssetGroupConnection = {
 export type ContentfulAssetSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulAssetFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulAssetSys = {
+  type?: Maybe<Scalars['String']>;
+  revision?: Maybe<Scalars['Int']>;
+};
+
+export type ContentfulAssetSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  revision?: Maybe<IntQueryOperatorInput>;
 };
 
 export type ContentfulBlogPost = Node & {
@@ -1343,6 +1418,7 @@ export type ContentfulBlogPostBodyTextNode = Node & {
   children: Array<Node>;
   internal: Internal;
   body?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulBlogPostBodyTextNodeSys>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -1461,6 +1537,7 @@ export type ContentfulBlogPostBodyTextNodeFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'body'
+  | 'sys___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___excerpt'
@@ -1521,6 +1598,7 @@ export type ContentfulBlogPostBodyTextNodeFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   body?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlogPostBodyTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -1536,6 +1614,14 @@ export type ContentfulBlogPostBodyTextNodeGroupConnection = {
 export type ContentfulBlogPostBodyTextNodeSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulBlogPostBodyTextNodeFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulBlogPostBodyTextNodeSys = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlogPostBodyTextNodeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulBlogPostConnection = {
@@ -1565,6 +1651,7 @@ export type ContentfulBlogPostDescriptionTextNode = Node & {
   children: Array<Node>;
   internal: Internal;
   description?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulBlogPostDescriptionTextNodeSys>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -1683,6 +1770,7 @@ export type ContentfulBlogPostDescriptionTextNodeFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'description'
+  | 'sys___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___excerpt'
@@ -1743,6 +1831,7 @@ export type ContentfulBlogPostDescriptionTextNodeFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlogPostDescriptionTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -1758,6 +1847,14 @@ export type ContentfulBlogPostDescriptionTextNodeGroupConnection = {
 export type ContentfulBlogPostDescriptionTextNodeSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulBlogPostDescriptionTextNodeFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulBlogPostDescriptionTextNodeSys = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlogPostDescriptionTextNodeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulBlogPostEdge = {
@@ -1896,6 +1993,9 @@ export type ContentfulBlogPostFieldsEnum =
   | 'heroImage___internal___owner'
   | 'heroImage___internal___type'
   | 'heroImage___contentful_id'
+  | 'heroImage___spaceId'
+  | 'heroImage___createdAt'
+  | 'heroImage___updatedAt'
   | 'heroImage___file___url'
   | 'heroImage___file___details___size'
   | 'heroImage___file___fileName'
@@ -1903,6 +2003,8 @@ export type ContentfulBlogPostFieldsEnum =
   | 'heroImage___title'
   | 'heroImage___description'
   | 'heroImage___node_locale'
+  | 'heroImage___sys___type'
+  | 'heroImage___sys___revision'
   | 'heroImage___fixed___base64'
   | 'heroImage___fixed___tracedSVG'
   | 'heroImage___fixed___aspectRatio'
@@ -2003,12 +2105,17 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___image___internal___owner'
   | 'author___image___internal___type'
   | 'author___image___contentful_id'
+  | 'author___image___spaceId'
+  | 'author___image___createdAt'
+  | 'author___image___updatedAt'
   | 'author___image___file___url'
   | 'author___image___file___fileName'
   | 'author___image___file___contentType'
   | 'author___image___title'
   | 'author___image___description'
   | 'author___image___node_locale'
+  | 'author___image___sys___type'
+  | 'author___image___sys___revision'
   | 'author___image___fixed___base64'
   | 'author___image___fixed___tracedSVG'
   | 'author___image___fixed___aspectRatio'
@@ -2071,6 +2178,9 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___blog_post___heroImage___id'
   | 'author___blog_post___heroImage___children'
   | 'author___blog_post___heroImage___contentful_id'
+  | 'author___blog_post___heroImage___spaceId'
+  | 'author___blog_post___heroImage___createdAt'
+  | 'author___blog_post___heroImage___updatedAt'
   | 'author___blog_post___heroImage___title'
   | 'author___blog_post___heroImage___description'
   | 'author___blog_post___heroImage___node_locale'
@@ -2099,6 +2209,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___blog_post___contentful_id'
   | 'author___blog_post___createdAt'
   | 'author___blog_post___updatedAt'
+  | 'author___blog_post___sys___type'
   | 'author___blog_post___sys___revision'
   | 'author___blog_post___node_locale'
   | 'author___blog_post___childContentfulBlogPostDescriptionTextNode___id'
@@ -2122,6 +2233,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___shortBio___internal___owner'
   | 'author___shortBio___internal___type'
   | 'author___shortBio___shortBio'
+  | 'author___shortBio___sys___type'
   | 'author___shortBio___childMarkdownRemark___id'
   | 'author___shortBio___childMarkdownRemark___excerpt'
   | 'author___shortBio___childMarkdownRemark___rawMarkdownBody'
@@ -2136,6 +2248,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___contentful_id'
   | 'author___createdAt'
   | 'author___updatedAt'
+  | 'author___sys___type'
   | 'author___sys___revision'
   | 'author___node_locale'
   | 'author___childContentfulPersonShortBioTextNode___id'
@@ -2153,6 +2266,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___childContentfulPersonShortBioTextNode___internal___owner'
   | 'author___childContentfulPersonShortBioTextNode___internal___type'
   | 'author___childContentfulPersonShortBioTextNode___shortBio'
+  | 'author___childContentfulPersonShortBioTextNode___sys___type'
   | 'author___childContentfulPersonShortBioTextNode___childMarkdownRemark___id'
   | 'author___childContentfulPersonShortBioTextNode___childMarkdownRemark___excerpt'
   | 'author___childContentfulPersonShortBioTextNode___childMarkdownRemark___rawMarkdownBody'
@@ -2202,6 +2316,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'description___internal___owner'
   | 'description___internal___type'
   | 'description___description'
+  | 'description___sys___type'
   | 'description___childMarkdownRemark___id'
   | 'description___childMarkdownRemark___frontmatter___title'
   | 'description___childMarkdownRemark___excerpt'
@@ -2270,6 +2385,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'body___internal___owner'
   | 'body___internal___type'
   | 'body___body'
+  | 'body___sys___type'
   | 'body___childMarkdownRemark___id'
   | 'body___childMarkdownRemark___frontmatter___title'
   | 'body___childMarkdownRemark___excerpt'
@@ -2303,6 +2419,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -2348,6 +2465,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'childContentfulBlogPostDescriptionTextNode___internal___owner'
   | 'childContentfulBlogPostDescriptionTextNode___internal___type'
   | 'childContentfulBlogPostDescriptionTextNode___description'
+  | 'childContentfulBlogPostDescriptionTextNode___sys___type'
   | 'childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___id'
   | 'childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___frontmatter___title'
   | 'childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___excerpt'
@@ -2416,6 +2534,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'childContentfulBlogPostBodyTextNode___internal___owner'
   | 'childContentfulBlogPostBodyTextNode___internal___type'
   | 'childContentfulBlogPostBodyTextNode___body'
+  | 'childContentfulBlogPostBodyTextNode___sys___type'
   | 'childContentfulBlogPostBodyTextNode___childMarkdownRemark___id'
   | 'childContentfulBlogPostBodyTextNode___childMarkdownRemark___frontmatter___title'
   | 'childContentfulBlogPostBodyTextNode___childMarkdownRemark___excerpt'
@@ -2488,6 +2607,7 @@ export type ContentfulBlogPostSortInput = {
 };
 
 export type ContentfulBlogPostSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulBlogPostSysContentType>;
 };
@@ -2515,6 +2635,7 @@ export type ContentfulBlogPostSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulBlogPostSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulBlogPostSysContentTypeFilterInput>;
 };
@@ -2527,6 +2648,7 @@ export type ContentfulContentType = Node & {
   name?: Maybe<Scalars['String']>;
   displayField?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulContentTypeSys>;
 };
 
 export type ContentfulContentTypeConnection = {
@@ -2645,7 +2767,8 @@ export type ContentfulContentTypeFieldsEnum =
   | 'internal___type'
   | 'name'
   | 'displayField'
-  | 'description';
+  | 'description'
+  | 'sys___type';
 
 export type ContentfulContentTypeFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2655,6 +2778,7 @@ export type ContentfulContentTypeFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   displayField?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulContentTypeSysFilterInput>;
 };
 
 export type ContentfulContentTypeGroupConnection = {
@@ -2669,6 +2793,14 @@ export type ContentfulContentTypeGroupConnection = {
 export type ContentfulContentTypeSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulContentTypeFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulContentTypeSys = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulDante = Node & {
@@ -2820,6 +2952,7 @@ export type ContentfulDanteFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -2856,6 +2989,7 @@ export type ContentfulDanteSortInput = {
 };
 
 export type ContentfulDanteSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulDanteSysContentType>;
 };
@@ -2883,6 +3017,7 @@ export type ContentfulDanteSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulDanteSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulDanteSysContentTypeFilterInput>;
 };
@@ -3152,6 +3287,9 @@ export type ContentfulPersonFieldsEnum =
   | 'image___internal___owner'
   | 'image___internal___type'
   | 'image___contentful_id'
+  | 'image___spaceId'
+  | 'image___createdAt'
+  | 'image___updatedAt'
   | 'image___file___url'
   | 'image___file___details___size'
   | 'image___file___fileName'
@@ -3159,6 +3297,8 @@ export type ContentfulPersonFieldsEnum =
   | 'image___title'
   | 'image___description'
   | 'image___node_locale'
+  | 'image___sys___type'
+  | 'image___sys___revision'
   | 'image___fixed___base64'
   | 'image___fixed___tracedSVG'
   | 'image___fixed___aspectRatio'
@@ -3257,12 +3397,17 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___heroImage___internal___owner'
   | 'blog_post___heroImage___internal___type'
   | 'blog_post___heroImage___contentful_id'
+  | 'blog_post___heroImage___spaceId'
+  | 'blog_post___heroImage___createdAt'
+  | 'blog_post___heroImage___updatedAt'
   | 'blog_post___heroImage___file___url'
   | 'blog_post___heroImage___file___fileName'
   | 'blog_post___heroImage___file___contentType'
   | 'blog_post___heroImage___title'
   | 'blog_post___heroImage___description'
   | 'blog_post___heroImage___node_locale'
+  | 'blog_post___heroImage___sys___type'
+  | 'blog_post___heroImage___sys___revision'
   | 'blog_post___heroImage___fixed___base64'
   | 'blog_post___heroImage___fixed___tracedSVG'
   | 'blog_post___heroImage___fixed___aspectRatio'
@@ -3327,6 +3472,9 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___author___image___id'
   | 'blog_post___author___image___children'
   | 'blog_post___author___image___contentful_id'
+  | 'blog_post___author___image___spaceId'
+  | 'blog_post___author___image___createdAt'
+  | 'blog_post___author___image___updatedAt'
   | 'blog_post___author___image___title'
   | 'blog_post___author___image___description'
   | 'blog_post___author___image___node_locale'
@@ -3349,6 +3497,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___author___contentful_id'
   | 'blog_post___author___createdAt'
   | 'blog_post___author___updatedAt'
+  | 'blog_post___author___sys___type'
   | 'blog_post___author___sys___revision'
   | 'blog_post___author___node_locale'
   | 'blog_post___author___childContentfulPersonShortBioTextNode___id'
@@ -3369,6 +3518,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___description___internal___owner'
   | 'blog_post___description___internal___type'
   | 'blog_post___description___description'
+  | 'blog_post___description___sys___type'
   | 'blog_post___description___childMarkdownRemark___id'
   | 'blog_post___description___childMarkdownRemark___excerpt'
   | 'blog_post___description___childMarkdownRemark___rawMarkdownBody'
@@ -3394,6 +3544,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___body___internal___owner'
   | 'blog_post___body___internal___type'
   | 'blog_post___body___body'
+  | 'blog_post___body___sys___type'
   | 'blog_post___body___childMarkdownRemark___id'
   | 'blog_post___body___childMarkdownRemark___excerpt'
   | 'blog_post___body___childMarkdownRemark___rawMarkdownBody'
@@ -3408,6 +3559,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___contentful_id'
   | 'blog_post___createdAt'
   | 'blog_post___updatedAt'
+  | 'blog_post___sys___type'
   | 'blog_post___sys___revision'
   | 'blog_post___node_locale'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___id'
@@ -3425,6 +3577,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___internal___owner'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___internal___type'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___description'
+  | 'blog_post___childContentfulBlogPostDescriptionTextNode___sys___type'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___id'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___excerpt'
   | 'blog_post___childContentfulBlogPostDescriptionTextNode___childMarkdownRemark___rawMarkdownBody'
@@ -3450,6 +3603,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___childContentfulBlogPostBodyTextNode___internal___owner'
   | 'blog_post___childContentfulBlogPostBodyTextNode___internal___type'
   | 'blog_post___childContentfulBlogPostBodyTextNode___body'
+  | 'blog_post___childContentfulBlogPostBodyTextNode___sys___type'
   | 'blog_post___childContentfulBlogPostBodyTextNode___childMarkdownRemark___id'
   | 'blog_post___childContentfulBlogPostBodyTextNode___childMarkdownRemark___excerpt'
   | 'blog_post___childContentfulBlogPostBodyTextNode___childMarkdownRemark___rawMarkdownBody'
@@ -3499,6 +3653,7 @@ export type ContentfulPersonFieldsEnum =
   | 'shortBio___internal___owner'
   | 'shortBio___internal___type'
   | 'shortBio___shortBio'
+  | 'shortBio___sys___type'
   | 'shortBio___childMarkdownRemark___id'
   | 'shortBio___childMarkdownRemark___frontmatter___title'
   | 'shortBio___childMarkdownRemark___excerpt'
@@ -3532,6 +3687,7 @@ export type ContentfulPersonFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -3577,6 +3733,7 @@ export type ContentfulPersonFieldsEnum =
   | 'childContentfulPersonShortBioTextNode___internal___owner'
   | 'childContentfulPersonShortBioTextNode___internal___type'
   | 'childContentfulPersonShortBioTextNode___shortBio'
+  | 'childContentfulPersonShortBioTextNode___sys___type'
   | 'childContentfulPersonShortBioTextNode___childMarkdownRemark___id'
   | 'childContentfulPersonShortBioTextNode___childMarkdownRemark___frontmatter___title'
   | 'childContentfulPersonShortBioTextNode___childMarkdownRemark___excerpt'
@@ -3646,6 +3803,7 @@ export type ContentfulPersonShortBioTextNode = Node & {
   children: Array<Node>;
   internal: Internal;
   shortBio?: Maybe<Scalars['String']>;
+  sys?: Maybe<ContentfulPersonShortBioTextNodeSys>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -3764,6 +3922,7 @@ export type ContentfulPersonShortBioTextNodeFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'shortBio'
+  | 'sys___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___excerpt'
@@ -3824,6 +3983,7 @@ export type ContentfulPersonShortBioTextNodeFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   shortBio?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -3841,12 +4001,21 @@ export type ContentfulPersonShortBioTextNodeSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulPersonShortBioTextNodeSys = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulPersonShortBioTextNodeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+};
+
 export type ContentfulPersonSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulPersonFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
 export type ContentfulPersonSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulPersonSysContentType>;
 };
@@ -3874,6 +4043,7 @@ export type ContentfulPersonSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulPersonSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulPersonSysContentTypeFilterInput>;
 };
@@ -4082,6 +4252,9 @@ export type ContentfulProjectFieldsEnum =
   | 'logo___internal___owner'
   | 'logo___internal___type'
   | 'logo___contentful_id'
+  | 'logo___spaceId'
+  | 'logo___createdAt'
+  | 'logo___updatedAt'
   | 'logo___file___url'
   | 'logo___file___details___size'
   | 'logo___file___fileName'
@@ -4089,6 +4262,8 @@ export type ContentfulProjectFieldsEnum =
   | 'logo___title'
   | 'logo___description'
   | 'logo___node_locale'
+  | 'logo___sys___type'
+  | 'logo___sys___revision'
   | 'logo___fixed___base64'
   | 'logo___fixed___tracedSVG'
   | 'logo___fixed___aspectRatio'
@@ -4208,6 +4383,7 @@ export type ContentfulProjectFieldsEnum =
   | 'about___socialLinks___contentful_id'
   | 'about___socialLinks___createdAt'
   | 'about___socialLinks___updatedAt'
+  | 'about___socialLinks___sys___type'
   | 'about___socialLinks___sys___revision'
   | 'about___socialLinks___node_locale'
   | 'about___profile___id'
@@ -4225,12 +4401,17 @@ export type ContentfulProjectFieldsEnum =
   | 'about___profile___internal___owner'
   | 'about___profile___internal___type'
   | 'about___profile___contentful_id'
+  | 'about___profile___spaceId'
+  | 'about___profile___createdAt'
+  | 'about___profile___updatedAt'
   | 'about___profile___file___url'
   | 'about___profile___file___fileName'
   | 'about___profile___file___contentType'
   | 'about___profile___title'
   | 'about___profile___description'
   | 'about___profile___node_locale'
+  | 'about___profile___sys___type'
+  | 'about___profile___sys___revision'
   | 'about___profile___fixed___base64'
   | 'about___profile___fixed___tracedSVG'
   | 'about___profile___fixed___aspectRatio'
@@ -4295,6 +4476,9 @@ export type ContentfulProjectFieldsEnum =
   | 'about___projects___logo___id'
   | 'about___projects___logo___children'
   | 'about___projects___logo___contentful_id'
+  | 'about___projects___logo___spaceId'
+  | 'about___projects___logo___createdAt'
+  | 'about___projects___logo___updatedAt'
   | 'about___projects___logo___title'
   | 'about___projects___logo___description'
   | 'about___projects___logo___node_locale'
@@ -4316,6 +4500,7 @@ export type ContentfulProjectFieldsEnum =
   | 'about___projects___contentful_id'
   | 'about___projects___createdAt'
   | 'about___projects___updatedAt'
+  | 'about___projects___sys___type'
   | 'about___projects___sys___revision'
   | 'about___projects___node_locale'
   | 'about___aboutMe___id'
@@ -4333,6 +4518,7 @@ export type ContentfulProjectFieldsEnum =
   | 'about___aboutMe___internal___owner'
   | 'about___aboutMe___internal___type'
   | 'about___aboutMe___aboutMe'
+  | 'about___aboutMe___sys___type'
   | 'about___aboutMe___childMarkdownRemark___id'
   | 'about___aboutMe___childMarkdownRemark___excerpt'
   | 'about___aboutMe___childMarkdownRemark___rawMarkdownBody'
@@ -4347,6 +4533,7 @@ export type ContentfulProjectFieldsEnum =
   | 'about___contentful_id'
   | 'about___createdAt'
   | 'about___updatedAt'
+  | 'about___sys___type'
   | 'about___sys___revision'
   | 'about___node_locale'
   | 'about___childContentfulAboutAboutMeTextNode___id'
@@ -4364,6 +4551,7 @@ export type ContentfulProjectFieldsEnum =
   | 'about___childContentfulAboutAboutMeTextNode___internal___owner'
   | 'about___childContentfulAboutAboutMeTextNode___internal___type'
   | 'about___childContentfulAboutAboutMeTextNode___aboutMe'
+  | 'about___childContentfulAboutAboutMeTextNode___sys___type'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___rawMarkdownBody'
@@ -4378,6 +4566,7 @@ export type ContentfulProjectFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -4425,6 +4614,7 @@ export type ContentfulProjectSortInput = {
 };
 
 export type ContentfulProjectSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulProjectSysContentType>;
 };
@@ -4452,6 +4642,7 @@ export type ContentfulProjectSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulProjectSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulProjectSysContentTypeFilterInput>;
 };
@@ -4749,6 +4940,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___socialLinks___contentful_id'
   | 'about___socialLinks___createdAt'
   | 'about___socialLinks___updatedAt'
+  | 'about___socialLinks___sys___type'
   | 'about___socialLinks___sys___revision'
   | 'about___socialLinks___node_locale'
   | 'about___profile___id'
@@ -4766,12 +4958,17 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___profile___internal___owner'
   | 'about___profile___internal___type'
   | 'about___profile___contentful_id'
+  | 'about___profile___spaceId'
+  | 'about___profile___createdAt'
+  | 'about___profile___updatedAt'
   | 'about___profile___file___url'
   | 'about___profile___file___fileName'
   | 'about___profile___file___contentType'
   | 'about___profile___title'
   | 'about___profile___description'
   | 'about___profile___node_locale'
+  | 'about___profile___sys___type'
+  | 'about___profile___sys___revision'
   | 'about___profile___fixed___base64'
   | 'about___profile___fixed___tracedSVG'
   | 'about___profile___fixed___aspectRatio'
@@ -4836,6 +5033,9 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___projects___logo___id'
   | 'about___projects___logo___children'
   | 'about___projects___logo___contentful_id'
+  | 'about___projects___logo___spaceId'
+  | 'about___projects___logo___createdAt'
+  | 'about___projects___logo___updatedAt'
   | 'about___projects___logo___title'
   | 'about___projects___logo___description'
   | 'about___projects___logo___node_locale'
@@ -4857,6 +5057,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___projects___contentful_id'
   | 'about___projects___createdAt'
   | 'about___projects___updatedAt'
+  | 'about___projects___sys___type'
   | 'about___projects___sys___revision'
   | 'about___projects___node_locale'
   | 'about___aboutMe___id'
@@ -4874,6 +5075,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___aboutMe___internal___owner'
   | 'about___aboutMe___internal___type'
   | 'about___aboutMe___aboutMe'
+  | 'about___aboutMe___sys___type'
   | 'about___aboutMe___childMarkdownRemark___id'
   | 'about___aboutMe___childMarkdownRemark___excerpt'
   | 'about___aboutMe___childMarkdownRemark___rawMarkdownBody'
@@ -4888,6 +5090,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___contentful_id'
   | 'about___createdAt'
   | 'about___updatedAt'
+  | 'about___sys___type'
   | 'about___sys___revision'
   | 'about___node_locale'
   | 'about___childContentfulAboutAboutMeTextNode___id'
@@ -4905,6 +5108,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'about___childContentfulAboutAboutMeTextNode___internal___owner'
   | 'about___childContentfulAboutAboutMeTextNode___internal___type'
   | 'about___childContentfulAboutAboutMeTextNode___aboutMe'
+  | 'about___childContentfulAboutAboutMeTextNode___sys___type'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
   | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___rawMarkdownBody'
@@ -4919,6 +5123,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'contentful_id'
   | 'createdAt'
   | 'updatedAt'
+  | 'sys___type'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -4962,6 +5167,7 @@ export type ContentfulSocialLinkSortInput = {
 };
 
 export type ContentfulSocialLinkSys = {
+  type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
   contentType?: Maybe<ContentfulSocialLinkSysContentType>;
 };
@@ -4989,6 +5195,7 @@ export type ContentfulSocialLinkSysContentTypeSysFilterInput = {
 };
 
 export type ContentfulSocialLinkSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
   revision?: Maybe<IntQueryOperatorInput>;
   contentType?: Maybe<ContentfulSocialLinkSysContentTypeFilterInput>;
 };
@@ -5505,6 +5712,7 @@ export type FileFieldsEnum =
   | 'childImageSharp___sizes___originalName'
   | 'childImageSharp___sizes___presentationWidth'
   | 'childImageSharp___sizes___presentationHeight'
+  | 'childImageSharp___gatsbyImage___imageData'
   | 'childImageSharp___original___width'
   | 'childImageSharp___original___height'
   | 'childImageSharp___original___src'
@@ -5729,6 +5937,17 @@ export type ImageFormat =
   | 'PNG'
   | 'WEBP';
 
+export type ImageLayout = 
+  | 'FIXED'
+  | 'FLUID'
+  | 'CONSTRAINED';
+
+export type ImagePlaceholder = 
+  | 'DOMINANT_COLOR'
+  | 'TRACED_SVG'
+  | 'BASE64'
+  | 'NONE';
+
 export type ImageResizingBehavior = 
   | 'NO_CHANGE'
   /** Same as the default resizing, but adds padding so that the generated image has the specified dimensions. */
@@ -5752,6 +5971,7 @@ export type ImageSharp = Node & {
   fluid?: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes?: Maybe<ImageSharpSizes>;
+  gatsbyImage?: Maybe<ImageSharpGatsbyImage>;
   original?: Maybe<ImageSharpOriginal>;
   resize?: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -5857,6 +6077,37 @@ export type ImageSharpSizesArgs = {
 };
 
 
+export type ImageSharpGatsbyImageArgs = {
+  layout?: Maybe<ImageLayout>;
+  maxWidth?: Maybe<Scalars['Int']>;
+  maxHeight?: Maybe<Scalars['Int']>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  placeholder?: Maybe<ImagePlaceholder>;
+  tracedSVGOptions?: Maybe<Potrace>;
+  webP?: Maybe<Scalars['Boolean']>;
+  outputPixelDensities?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  sizes?: Maybe<Scalars['String']>;
+  base64Width?: Maybe<Scalars['Int']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  pngCompressionSpeed?: Maybe<Scalars['Int']>;
+  duotone?: Maybe<DuotoneGradient>;
+  quality?: Maybe<Scalars['Int']>;
+  jpegQuality?: Maybe<Scalars['Int']>;
+  pngQuality?: Maybe<Scalars['Int']>;
+  webpQuality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  toFormatBase64?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  fit?: Maybe<ImageFit>;
+  background?: Maybe<Scalars['String']>;
+  rotate?: Maybe<Scalars['Int']>;
+  trim?: Maybe<Scalars['Float']>;
+  srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -5951,6 +6202,7 @@ export type ImageSharpFieldsEnum =
   | 'sizes___originalName'
   | 'sizes___presentationWidth'
   | 'sizes___presentationHeight'
+  | 'gatsbyImage___imageData'
   | 'original___width'
   | 'original___height'
   | 'original___src'
@@ -6052,6 +6304,7 @@ export type ImageSharpFilterInput = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImage?: Maybe<ImageSharpGatsbyImageFilterInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -6114,6 +6367,14 @@ export type ImageSharpFluidFilterInput = {
   originalName?: Maybe<StringQueryOperatorInput>;
   presentationWidth?: Maybe<IntQueryOperatorInput>;
   presentationHeight?: Maybe<IntQueryOperatorInput>;
+};
+
+export type ImageSharpGatsbyImage = {
+  imageData: Scalars['JSON'];
+};
+
+export type ImageSharpGatsbyImageFilterInput = {
+  imageData?: Maybe<JsonQueryOperatorInput>;
 };
 
 export type ImageSharpGroupConnection = {
@@ -6566,10 +6827,10 @@ export type Query = {
   allFile: FileConnection;
   directory?: Maybe<Directory>;
   allDirectory: DirectoryConnection;
-  sitePage?: Maybe<SitePage>;
-  allSitePage: SitePageConnection;
   site?: Maybe<Site>;
   allSite: SiteConnection;
+  sitePage?: Maybe<SitePage>;
+  allSitePage: SitePageConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
@@ -6700,6 +6961,28 @@ export type QueryAllDirectoryArgs = {
 };
 
 
+export type QuerySiteArgs = {
+  buildTime?: Maybe<DateQueryOperatorInput>;
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  polyfill?: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllSiteArgs = {
+  filter?: Maybe<SiteFilterInput>;
+  sort?: Maybe<SiteSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>;
   component?: Maybe<StringQueryOperatorInput>;
@@ -6721,28 +7004,6 @@ export type QuerySitePageArgs = {
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QuerySiteArgs = {
-  buildTime?: Maybe<DateQueryOperatorInput>;
-  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-
-export type QueryAllSiteArgs = {
-  filter?: Maybe<SiteFilterInput>;
-  sort?: Maybe<SiteSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -6779,6 +7040,7 @@ export type QueryImageSharpArgs = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImage?: Maybe<ImageSharpGatsbyImageFilterInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -6802,10 +7064,14 @@ export type QueryContentfulAssetArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
   file?: Maybe<ContentfulAssetFileFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulAssetSysFilterInput>;
   fixed?: Maybe<ContentfulFixedFilterInput>;
   resolutions?: Maybe<ContentfulResolutionsFilterInput>;
   fluid?: Maybe<ContentfulFluidFilterInput>;
@@ -6851,6 +7117,7 @@ export type QueryContentfulAboutAboutMeTextNodeArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   aboutMe?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulAboutAboutMeTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -6956,6 +7223,7 @@ export type QueryContentfulBlogPostBodyTextNodeArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   body?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlogPostBodyTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -6974,6 +7242,7 @@ export type QueryContentfulBlogPostDescriptionTextNodeArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlogPostDescriptionTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -7024,6 +7293,7 @@ export type QueryContentfulPersonShortBioTextNodeArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   shortBio?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -7077,6 +7347,7 @@ export type QueryContentfulContentTypeArgs = {
   name?: Maybe<StringQueryOperatorInput>;
   displayField?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulContentTypeSysFilterInput>;
 };
 
 
@@ -7115,6 +7386,7 @@ export type QuerySitePluginArgs = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
@@ -7131,7 +7403,7 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -7143,14 +7415,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -7341,8 +7605,8 @@ export type SiteEdge = {
 export type SiteFieldsEnum = 
   | 'buildTime'
   | 'siteMetadata___title'
-  | 'siteMetadata___siteUrl'
   | 'siteMetadata___description'
+  | 'siteMetadata___siteUrl'
   | 'port'
   | 'host'
   | 'polyfill'
@@ -7437,7 +7701,7 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -7643,16 +7907,34 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___short_name'
+  | 'pluginCreator___pluginOptions___start_url'
+  | 'pluginCreator___pluginOptions___cache_busting_mode'
+  | 'pluginCreator___pluginOptions___include_favicon'
+  | 'pluginCreator___pluginOptions___legacy'
+  | 'pluginCreator___pluginOptions___theme_color_in_head'
+  | 'pluginCreator___pluginOptions___base64Width'
+  | 'pluginCreator___pluginOptions___stripMetadata'
+  | 'pluginCreator___pluginOptions___defaultQuality'
+  | 'pluginCreator___pluginOptions___failOnError'
+  | 'pluginCreator___pluginOptions___displayName'
+  | 'pluginCreator___pluginOptions___minify'
+  | 'pluginCreator___pluginOptions___transpileTemplateLiterals'
+  | 'pluginCreator___pluginOptions___pure'
+  | 'pluginCreator___pluginOptions___isTSX'
+  | 'pluginCreator___pluginOptions___jsxPragma'
+  | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___aliases____components'
   | 'pluginCreator___pluginOptions___aliases____graphqlTypes'
   | 'pluginCreator___pluginOptions___codegenPlugins'
   | 'pluginCreator___pluginOptions___codegenPlugins___resolve'
-  | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___spaceId'
   | 'pluginCreator___pluginOptions___accessToken'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
   | 'pluginCreator___pluginFilepath'
   | 'pluginCreator___packageJson___name'
@@ -7715,6 +7997,7 @@ export type SitePlugin = Node & {
   version?: Maybe<Scalars['String']>;
   pluginOptions?: Maybe<SitePluginPluginOptions>;
   nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<SitePluginPackageJson>;
@@ -7837,16 +8120,34 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___name'
+  | 'pluginOptions___short_name'
+  | 'pluginOptions___start_url'
+  | 'pluginOptions___cache_busting_mode'
+  | 'pluginOptions___include_favicon'
+  | 'pluginOptions___legacy'
+  | 'pluginOptions___theme_color_in_head'
+  | 'pluginOptions___base64Width'
+  | 'pluginOptions___stripMetadata'
+  | 'pluginOptions___defaultQuality'
+  | 'pluginOptions___failOnError'
+  | 'pluginOptions___displayName'
+  | 'pluginOptions___minify'
+  | 'pluginOptions___transpileTemplateLiterals'
+  | 'pluginOptions___pure'
+  | 'pluginOptions___isTSX'
+  | 'pluginOptions___jsxPragma'
+  | 'pluginOptions___allExtensions'
   | 'pluginOptions___aliases____components'
   | 'pluginOptions___aliases____graphqlTypes'
   | 'pluginOptions___codegenPlugins'
   | 'pluginOptions___codegenPlugins___resolve'
-  | 'pluginOptions___fileName'
   | 'pluginOptions___spaceId'
   | 'pluginOptions___accessToken'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
+  | 'browserAPIs'
   | 'ssrAPIs'
   | 'pluginFilepath'
   | 'packageJson___name'
@@ -7876,6 +8177,7 @@ export type SitePluginFilterInput = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
@@ -7959,9 +8261,26 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  name?: Maybe<Scalars['String']>;
+  short_name?: Maybe<Scalars['String']>;
+  start_url?: Maybe<Scalars['String']>;
+  cache_busting_mode?: Maybe<Scalars['String']>;
+  include_favicon?: Maybe<Scalars['Boolean']>;
+  legacy?: Maybe<Scalars['Boolean']>;
+  theme_color_in_head?: Maybe<Scalars['Boolean']>;
+  base64Width?: Maybe<Scalars['Int']>;
+  stripMetadata?: Maybe<Scalars['Boolean']>;
+  defaultQuality?: Maybe<Scalars['Int']>;
+  failOnError?: Maybe<Scalars['Boolean']>;
+  displayName?: Maybe<Scalars['Boolean']>;
+  minify?: Maybe<Scalars['Boolean']>;
+  transpileTemplateLiterals?: Maybe<Scalars['Boolean']>;
+  pure?: Maybe<Scalars['Boolean']>;
+  isTSX?: Maybe<Scalars['Boolean']>;
+  jsxPragma?: Maybe<Scalars['String']>;
+  allExtensions?: Maybe<Scalars['Boolean']>;
   aliases?: Maybe<SitePluginPluginOptionsAliases>;
   codegenPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsCodegenPlugins>>>;
-  fileName?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
@@ -7991,9 +8310,26 @@ export type SitePluginPluginOptionsCodegenPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  short_name?: Maybe<StringQueryOperatorInput>;
+  start_url?: Maybe<StringQueryOperatorInput>;
+  cache_busting_mode?: Maybe<StringQueryOperatorInput>;
+  include_favicon?: Maybe<BooleanQueryOperatorInput>;
+  legacy?: Maybe<BooleanQueryOperatorInput>;
+  theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
+  base64Width?: Maybe<IntQueryOperatorInput>;
+  stripMetadata?: Maybe<BooleanQueryOperatorInput>;
+  defaultQuality?: Maybe<IntQueryOperatorInput>;
+  failOnError?: Maybe<BooleanQueryOperatorInput>;
+  displayName?: Maybe<BooleanQueryOperatorInput>;
+  minify?: Maybe<BooleanQueryOperatorInput>;
+  transpileTemplateLiterals?: Maybe<BooleanQueryOperatorInput>;
+  pure?: Maybe<BooleanQueryOperatorInput>;
+  isTSX?: Maybe<BooleanQueryOperatorInput>;
+  jsxPragma?: Maybe<StringQueryOperatorInput>;
+  allExtensions?: Maybe<BooleanQueryOperatorInput>;
   aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>;
   codegenPlugins?: Maybe<SitePluginPluginOptionsCodegenPluginsFilterListInput>;
-  fileName?: Maybe<StringQueryOperatorInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
@@ -8007,14 +8343,14 @@ export type SitePluginSortInput = {
 
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
-  siteUrl?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  siteUrl?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
