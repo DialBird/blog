@@ -40,7 +40,7 @@
     "import-sort-style-module": "^6.0.0",
     "netlify-cli": "^2.54.0",
     "node-sass": "^4.14.1",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.2",
     "prettier-plugin-import-sort": "^0.0.6"
   },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
