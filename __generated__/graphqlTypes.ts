@@ -33,992 +33,6 @@ export type BooleanQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
 };
 
-export type ContentfulAbout = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  roles?: Maybe<Array<Maybe<Scalars['String']>>>;
-  mediumUser?: Maybe<Scalars['String']>;
-  socialLinks?: Maybe<Array<Maybe<ContentfulSocialLink>>>;
-  profile?: Maybe<ContentfulAsset>;
-  projects?: Maybe<Array<Maybe<ContentfulProject>>>;
-  aboutMe?: Maybe<ContentfulAboutAboutMeTextNode>;
-  spaceId?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  sys?: Maybe<ContentfulAboutSys>;
-  node_locale?: Maybe<Scalars['String']>;
-  childContentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNode>;
-};
-
-
-export type ContentfulAboutCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulAboutUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulAboutAboutMeTextNode = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  aboutMe?: Maybe<Scalars['String']>;
-  sys?: Maybe<ContentfulAboutAboutMeTextNodeSys>;
-  childMarkdownRemark?: Maybe<MarkdownRemark>;
-};
-
-export type ContentfulAboutAboutMeTextNodeConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulAboutAboutMeTextNodeEdge>;
-  nodes: Array<ContentfulAboutAboutMeTextNode>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentfulAboutAboutMeTextNodeGroupConnection>;
-};
-
-
-export type ContentfulAboutAboutMeTextNodeConnectionDistinctArgs = {
-  field: ContentfulAboutAboutMeTextNodeFieldsEnum;
-};
-
-
-export type ContentfulAboutAboutMeTextNodeConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentfulAboutAboutMeTextNodeFieldsEnum;
-};
-
-export type ContentfulAboutAboutMeTextNodeEdge = {
-  next?: Maybe<ContentfulAboutAboutMeTextNode>;
-  node: ContentfulAboutAboutMeTextNode;
-  previous?: Maybe<ContentfulAboutAboutMeTextNode>;
-};
-
-export type ContentfulAboutAboutMeTextNodeFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'aboutMe'
-  | 'sys___type'
-  | 'childMarkdownRemark___id'
-  | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___excerpt'
-  | 'childMarkdownRemark___rawMarkdownBody'
-  | 'childMarkdownRemark___html'
-  | 'childMarkdownRemark___htmlAst'
-  | 'childMarkdownRemark___excerptAst'
-  | 'childMarkdownRemark___headings'
-  | 'childMarkdownRemark___headings___id'
-  | 'childMarkdownRemark___headings___value'
-  | 'childMarkdownRemark___headings___depth'
-  | 'childMarkdownRemark___timeToRead'
-  | 'childMarkdownRemark___tableOfContents'
-  | 'childMarkdownRemark___wordCount___paragraphs'
-  | 'childMarkdownRemark___wordCount___sentences'
-  | 'childMarkdownRemark___wordCount___words'
-  | 'childMarkdownRemark___parent___id'
-  | 'childMarkdownRemark___parent___parent___id'
-  | 'childMarkdownRemark___parent___parent___children'
-  | 'childMarkdownRemark___parent___children'
-  | 'childMarkdownRemark___parent___children___id'
-  | 'childMarkdownRemark___parent___children___children'
-  | 'childMarkdownRemark___parent___internal___content'
-  | 'childMarkdownRemark___parent___internal___contentDigest'
-  | 'childMarkdownRemark___parent___internal___description'
-  | 'childMarkdownRemark___parent___internal___fieldOwners'
-  | 'childMarkdownRemark___parent___internal___ignoreType'
-  | 'childMarkdownRemark___parent___internal___mediaType'
-  | 'childMarkdownRemark___parent___internal___owner'
-  | 'childMarkdownRemark___parent___internal___type'
-  | 'childMarkdownRemark___children'
-  | 'childMarkdownRemark___children___id'
-  | 'childMarkdownRemark___children___parent___id'
-  | 'childMarkdownRemark___children___parent___children'
-  | 'childMarkdownRemark___children___children'
-  | 'childMarkdownRemark___children___children___id'
-  | 'childMarkdownRemark___children___children___children'
-  | 'childMarkdownRemark___children___internal___content'
-  | 'childMarkdownRemark___children___internal___contentDigest'
-  | 'childMarkdownRemark___children___internal___description'
-  | 'childMarkdownRemark___children___internal___fieldOwners'
-  | 'childMarkdownRemark___children___internal___ignoreType'
-  | 'childMarkdownRemark___children___internal___mediaType'
-  | 'childMarkdownRemark___children___internal___owner'
-  | 'childMarkdownRemark___children___internal___type'
-  | 'childMarkdownRemark___internal___content'
-  | 'childMarkdownRemark___internal___contentDigest'
-  | 'childMarkdownRemark___internal___description'
-  | 'childMarkdownRemark___internal___fieldOwners'
-  | 'childMarkdownRemark___internal___ignoreType'
-  | 'childMarkdownRemark___internal___mediaType'
-  | 'childMarkdownRemark___internal___owner'
-  | 'childMarkdownRemark___internal___type';
-
-export type ContentfulAboutAboutMeTextNodeFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutMe?: Maybe<StringQueryOperatorInput>;
-  sys?: Maybe<ContentfulAboutAboutMeTextNodeSysFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-export type ContentfulAboutAboutMeTextNodeGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulAboutAboutMeTextNodeEdge>;
-  nodes: Array<ContentfulAboutAboutMeTextNode>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulAboutAboutMeTextNodeSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulAboutAboutMeTextNodeFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type ContentfulAboutAboutMeTextNodeSys = {
-  type?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulAboutAboutMeTextNodeSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulAboutConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulAboutEdge>;
-  nodes: Array<ContentfulAbout>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentfulAboutGroupConnection>;
-};
-
-
-export type ContentfulAboutConnectionDistinctArgs = {
-  field: ContentfulAboutFieldsEnum;
-};
-
-
-export type ContentfulAboutConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentfulAboutFieldsEnum;
-};
-
-export type ContentfulAboutEdge = {
-  next?: Maybe<ContentfulAbout>;
-  node: ContentfulAbout;
-  previous?: Maybe<ContentfulAbout>;
-};
-
-export type ContentfulAboutFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'description'
-  | 'roles'
-  | 'mediumUser'
-  | 'socialLinks'
-  | 'socialLinks___id'
-  | 'socialLinks___parent___id'
-  | 'socialLinks___parent___parent___id'
-  | 'socialLinks___parent___parent___children'
-  | 'socialLinks___parent___children'
-  | 'socialLinks___parent___children___id'
-  | 'socialLinks___parent___children___children'
-  | 'socialLinks___parent___internal___content'
-  | 'socialLinks___parent___internal___contentDigest'
-  | 'socialLinks___parent___internal___description'
-  | 'socialLinks___parent___internal___fieldOwners'
-  | 'socialLinks___parent___internal___ignoreType'
-  | 'socialLinks___parent___internal___mediaType'
-  | 'socialLinks___parent___internal___owner'
-  | 'socialLinks___parent___internal___type'
-  | 'socialLinks___children'
-  | 'socialLinks___children___id'
-  | 'socialLinks___children___parent___id'
-  | 'socialLinks___children___parent___children'
-  | 'socialLinks___children___children'
-  | 'socialLinks___children___children___id'
-  | 'socialLinks___children___children___children'
-  | 'socialLinks___children___internal___content'
-  | 'socialLinks___children___internal___contentDigest'
-  | 'socialLinks___children___internal___description'
-  | 'socialLinks___children___internal___fieldOwners'
-  | 'socialLinks___children___internal___ignoreType'
-  | 'socialLinks___children___internal___mediaType'
-  | 'socialLinks___children___internal___owner'
-  | 'socialLinks___children___internal___type'
-  | 'socialLinks___internal___content'
-  | 'socialLinks___internal___contentDigest'
-  | 'socialLinks___internal___description'
-  | 'socialLinks___internal___fieldOwners'
-  | 'socialLinks___internal___ignoreType'
-  | 'socialLinks___internal___mediaType'
-  | 'socialLinks___internal___owner'
-  | 'socialLinks___internal___type'
-  | 'socialLinks___name'
-  | 'socialLinks___url'
-  | 'socialLinks___fontAwesomeIcon'
-  | 'socialLinks___about'
-  | 'socialLinks___about___id'
-  | 'socialLinks___about___parent___id'
-  | 'socialLinks___about___parent___children'
-  | 'socialLinks___about___children'
-  | 'socialLinks___about___children___id'
-  | 'socialLinks___about___children___children'
-  | 'socialLinks___about___internal___content'
-  | 'socialLinks___about___internal___contentDigest'
-  | 'socialLinks___about___internal___description'
-  | 'socialLinks___about___internal___fieldOwners'
-  | 'socialLinks___about___internal___ignoreType'
-  | 'socialLinks___about___internal___mediaType'
-  | 'socialLinks___about___internal___owner'
-  | 'socialLinks___about___internal___type'
-  | 'socialLinks___about___name'
-  | 'socialLinks___about___description'
-  | 'socialLinks___about___roles'
-  | 'socialLinks___about___mediumUser'
-  | 'socialLinks___about___socialLinks'
-  | 'socialLinks___about___socialLinks___id'
-  | 'socialLinks___about___socialLinks___children'
-  | 'socialLinks___about___socialLinks___name'
-  | 'socialLinks___about___socialLinks___url'
-  | 'socialLinks___about___socialLinks___fontAwesomeIcon'
-  | 'socialLinks___about___socialLinks___about'
-  | 'socialLinks___about___socialLinks___spaceId'
-  | 'socialLinks___about___socialLinks___contentful_id'
-  | 'socialLinks___about___socialLinks___createdAt'
-  | 'socialLinks___about___socialLinks___updatedAt'
-  | 'socialLinks___about___socialLinks___node_locale'
-  | 'socialLinks___about___profile___id'
-  | 'socialLinks___about___profile___children'
-  | 'socialLinks___about___profile___contentful_id'
-  | 'socialLinks___about___profile___spaceId'
-  | 'socialLinks___about___profile___createdAt'
-  | 'socialLinks___about___profile___updatedAt'
-  | 'socialLinks___about___profile___title'
-  | 'socialLinks___about___profile___description'
-  | 'socialLinks___about___profile___node_locale'
-  | 'socialLinks___about___projects'
-  | 'socialLinks___about___projects___id'
-  | 'socialLinks___about___projects___children'
-  | 'socialLinks___about___projects___name'
-  | 'socialLinks___about___projects___publishedDate'
-  | 'socialLinks___about___projects___repositoryUrl'
-  | 'socialLinks___about___projects___description'
-  | 'socialLinks___about___projects___projectUrl'
-  | 'socialLinks___about___projects___type'
-  | 'socialLinks___about___projects___about'
-  | 'socialLinks___about___projects___spaceId'
-  | 'socialLinks___about___projects___contentful_id'
-  | 'socialLinks___about___projects___createdAt'
-  | 'socialLinks___about___projects___updatedAt'
-  | 'socialLinks___about___projects___node_locale'
-  | 'socialLinks___about___aboutMe___id'
-  | 'socialLinks___about___aboutMe___children'
-  | 'socialLinks___about___aboutMe___aboutMe'
-  | 'socialLinks___about___spaceId'
-  | 'socialLinks___about___contentful_id'
-  | 'socialLinks___about___createdAt'
-  | 'socialLinks___about___updatedAt'
-  | 'socialLinks___about___sys___type'
-  | 'socialLinks___about___sys___revision'
-  | 'socialLinks___about___node_locale'
-  | 'socialLinks___about___childContentfulAboutAboutMeTextNode___id'
-  | 'socialLinks___about___childContentfulAboutAboutMeTextNode___children'
-  | 'socialLinks___about___childContentfulAboutAboutMeTextNode___aboutMe'
-  | 'socialLinks___spaceId'
-  | 'socialLinks___contentful_id'
-  | 'socialLinks___createdAt'
-  | 'socialLinks___updatedAt'
-  | 'socialLinks___sys___type'
-  | 'socialLinks___sys___revision'
-  | 'socialLinks___node_locale'
-  | 'profile___id'
-  | 'profile___parent___id'
-  | 'profile___parent___parent___id'
-  | 'profile___parent___parent___children'
-  | 'profile___parent___children'
-  | 'profile___parent___children___id'
-  | 'profile___parent___children___children'
-  | 'profile___parent___internal___content'
-  | 'profile___parent___internal___contentDigest'
-  | 'profile___parent___internal___description'
-  | 'profile___parent___internal___fieldOwners'
-  | 'profile___parent___internal___ignoreType'
-  | 'profile___parent___internal___mediaType'
-  | 'profile___parent___internal___owner'
-  | 'profile___parent___internal___type'
-  | 'profile___children'
-  | 'profile___children___id'
-  | 'profile___children___parent___id'
-  | 'profile___children___parent___children'
-  | 'profile___children___children'
-  | 'profile___children___children___id'
-  | 'profile___children___children___children'
-  | 'profile___children___internal___content'
-  | 'profile___children___internal___contentDigest'
-  | 'profile___children___internal___description'
-  | 'profile___children___internal___fieldOwners'
-  | 'profile___children___internal___ignoreType'
-  | 'profile___children___internal___mediaType'
-  | 'profile___children___internal___owner'
-  | 'profile___children___internal___type'
-  | 'profile___internal___content'
-  | 'profile___internal___contentDigest'
-  | 'profile___internal___description'
-  | 'profile___internal___fieldOwners'
-  | 'profile___internal___ignoreType'
-  | 'profile___internal___mediaType'
-  | 'profile___internal___owner'
-  | 'profile___internal___type'
-  | 'profile___contentful_id'
-  | 'profile___spaceId'
-  | 'profile___createdAt'
-  | 'profile___updatedAt'
-  | 'profile___file___url'
-  | 'profile___file___details___size'
-  | 'profile___file___fileName'
-  | 'profile___file___contentType'
-  | 'profile___title'
-  | 'profile___description'
-  | 'profile___node_locale'
-  | 'profile___sys___type'
-  | 'profile___sys___revision'
-  | 'profile___fixed___base64'
-  | 'profile___fixed___tracedSVG'
-  | 'profile___fixed___aspectRatio'
-  | 'profile___fixed___width'
-  | 'profile___fixed___height'
-  | 'profile___fixed___src'
-  | 'profile___fixed___srcSet'
-  | 'profile___fixed___srcWebp'
-  | 'profile___fixed___srcSetWebp'
-  | 'profile___resolutions___base64'
-  | 'profile___resolutions___tracedSVG'
-  | 'profile___resolutions___aspectRatio'
-  | 'profile___resolutions___width'
-  | 'profile___resolutions___height'
-  | 'profile___resolutions___src'
-  | 'profile___resolutions___srcSet'
-  | 'profile___resolutions___srcWebp'
-  | 'profile___resolutions___srcSetWebp'
-  | 'profile___fluid___base64'
-  | 'profile___fluid___tracedSVG'
-  | 'profile___fluid___aspectRatio'
-  | 'profile___fluid___src'
-  | 'profile___fluid___srcSet'
-  | 'profile___fluid___srcWebp'
-  | 'profile___fluid___srcSetWebp'
-  | 'profile___fluid___sizes'
-  | 'profile___sizes___base64'
-  | 'profile___sizes___tracedSVG'
-  | 'profile___sizes___aspectRatio'
-  | 'profile___sizes___src'
-  | 'profile___sizes___srcSet'
-  | 'profile___sizes___srcWebp'
-  | 'profile___sizes___srcSetWebp'
-  | 'profile___sizes___sizes'
-  | 'profile___resize___base64'
-  | 'profile___resize___tracedSVG'
-  | 'profile___resize___src'
-  | 'profile___resize___width'
-  | 'profile___resize___height'
-  | 'profile___resize___aspectRatio'
-  | 'projects'
-  | 'projects___id'
-  | 'projects___parent___id'
-  | 'projects___parent___parent___id'
-  | 'projects___parent___parent___children'
-  | 'projects___parent___children'
-  | 'projects___parent___children___id'
-  | 'projects___parent___children___children'
-  | 'projects___parent___internal___content'
-  | 'projects___parent___internal___contentDigest'
-  | 'projects___parent___internal___description'
-  | 'projects___parent___internal___fieldOwners'
-  | 'projects___parent___internal___ignoreType'
-  | 'projects___parent___internal___mediaType'
-  | 'projects___parent___internal___owner'
-  | 'projects___parent___internal___type'
-  | 'projects___children'
-  | 'projects___children___id'
-  | 'projects___children___parent___id'
-  | 'projects___children___parent___children'
-  | 'projects___children___children'
-  | 'projects___children___children___id'
-  | 'projects___children___children___children'
-  | 'projects___children___internal___content'
-  | 'projects___children___internal___contentDigest'
-  | 'projects___children___internal___description'
-  | 'projects___children___internal___fieldOwners'
-  | 'projects___children___internal___ignoreType'
-  | 'projects___children___internal___mediaType'
-  | 'projects___children___internal___owner'
-  | 'projects___children___internal___type'
-  | 'projects___internal___content'
-  | 'projects___internal___contentDigest'
-  | 'projects___internal___description'
-  | 'projects___internal___fieldOwners'
-  | 'projects___internal___ignoreType'
-  | 'projects___internal___mediaType'
-  | 'projects___internal___owner'
-  | 'projects___internal___type'
-  | 'projects___name'
-  | 'projects___publishedDate'
-  | 'projects___repositoryUrl'
-  | 'projects___description'
-  | 'projects___projectUrl'
-  | 'projects___type'
-  | 'projects___logo___id'
-  | 'projects___logo___parent___id'
-  | 'projects___logo___parent___children'
-  | 'projects___logo___children'
-  | 'projects___logo___children___id'
-  | 'projects___logo___children___children'
-  | 'projects___logo___internal___content'
-  | 'projects___logo___internal___contentDigest'
-  | 'projects___logo___internal___description'
-  | 'projects___logo___internal___fieldOwners'
-  | 'projects___logo___internal___ignoreType'
-  | 'projects___logo___internal___mediaType'
-  | 'projects___logo___internal___owner'
-  | 'projects___logo___internal___type'
-  | 'projects___logo___contentful_id'
-  | 'projects___logo___spaceId'
-  | 'projects___logo___createdAt'
-  | 'projects___logo___updatedAt'
-  | 'projects___logo___file___url'
-  | 'projects___logo___file___fileName'
-  | 'projects___logo___file___contentType'
-  | 'projects___logo___title'
-  | 'projects___logo___description'
-  | 'projects___logo___node_locale'
-  | 'projects___logo___sys___type'
-  | 'projects___logo___sys___revision'
-  | 'projects___logo___fixed___base64'
-  | 'projects___logo___fixed___tracedSVG'
-  | 'projects___logo___fixed___aspectRatio'
-  | 'projects___logo___fixed___width'
-  | 'projects___logo___fixed___height'
-  | 'projects___logo___fixed___src'
-  | 'projects___logo___fixed___srcSet'
-  | 'projects___logo___fixed___srcWebp'
-  | 'projects___logo___fixed___srcSetWebp'
-  | 'projects___logo___resolutions___base64'
-  | 'projects___logo___resolutions___tracedSVG'
-  | 'projects___logo___resolutions___aspectRatio'
-  | 'projects___logo___resolutions___width'
-  | 'projects___logo___resolutions___height'
-  | 'projects___logo___resolutions___src'
-  | 'projects___logo___resolutions___srcSet'
-  | 'projects___logo___resolutions___srcWebp'
-  | 'projects___logo___resolutions___srcSetWebp'
-  | 'projects___logo___fluid___base64'
-  | 'projects___logo___fluid___tracedSVG'
-  | 'projects___logo___fluid___aspectRatio'
-  | 'projects___logo___fluid___src'
-  | 'projects___logo___fluid___srcSet'
-  | 'projects___logo___fluid___srcWebp'
-  | 'projects___logo___fluid___srcSetWebp'
-  | 'projects___logo___fluid___sizes'
-  | 'projects___logo___sizes___base64'
-  | 'projects___logo___sizes___tracedSVG'
-  | 'projects___logo___sizes___aspectRatio'
-  | 'projects___logo___sizes___src'
-  | 'projects___logo___sizes___srcSet'
-  | 'projects___logo___sizes___srcWebp'
-  | 'projects___logo___sizes___srcSetWebp'
-  | 'projects___logo___sizes___sizes'
-  | 'projects___logo___resize___base64'
-  | 'projects___logo___resize___tracedSVG'
-  | 'projects___logo___resize___src'
-  | 'projects___logo___resize___width'
-  | 'projects___logo___resize___height'
-  | 'projects___logo___resize___aspectRatio'
-  | 'projects___about'
-  | 'projects___about___id'
-  | 'projects___about___parent___id'
-  | 'projects___about___parent___children'
-  | 'projects___about___children'
-  | 'projects___about___children___id'
-  | 'projects___about___children___children'
-  | 'projects___about___internal___content'
-  | 'projects___about___internal___contentDigest'
-  | 'projects___about___internal___description'
-  | 'projects___about___internal___fieldOwners'
-  | 'projects___about___internal___ignoreType'
-  | 'projects___about___internal___mediaType'
-  | 'projects___about___internal___owner'
-  | 'projects___about___internal___type'
-  | 'projects___about___name'
-  | 'projects___about___description'
-  | 'projects___about___roles'
-  | 'projects___about___mediumUser'
-  | 'projects___about___socialLinks'
-  | 'projects___about___socialLinks___id'
-  | 'projects___about___socialLinks___children'
-  | 'projects___about___socialLinks___name'
-  | 'projects___about___socialLinks___url'
-  | 'projects___about___socialLinks___fontAwesomeIcon'
-  | 'projects___about___socialLinks___about'
-  | 'projects___about___socialLinks___spaceId'
-  | 'projects___about___socialLinks___contentful_id'
-  | 'projects___about___socialLinks___createdAt'
-  | 'projects___about___socialLinks___updatedAt'
-  | 'projects___about___socialLinks___node_locale'
-  | 'projects___about___profile___id'
-  | 'projects___about___profile___children'
-  | 'projects___about___profile___contentful_id'
-  | 'projects___about___profile___spaceId'
-  | 'projects___about___profile___createdAt'
-  | 'projects___about___profile___updatedAt'
-  | 'projects___about___profile___title'
-  | 'projects___about___profile___description'
-  | 'projects___about___profile___node_locale'
-  | 'projects___about___projects'
-  | 'projects___about___projects___id'
-  | 'projects___about___projects___children'
-  | 'projects___about___projects___name'
-  | 'projects___about___projects___publishedDate'
-  | 'projects___about___projects___repositoryUrl'
-  | 'projects___about___projects___description'
-  | 'projects___about___projects___projectUrl'
-  | 'projects___about___projects___type'
-  | 'projects___about___projects___about'
-  | 'projects___about___projects___spaceId'
-  | 'projects___about___projects___contentful_id'
-  | 'projects___about___projects___createdAt'
-  | 'projects___about___projects___updatedAt'
-  | 'projects___about___projects___node_locale'
-  | 'projects___about___aboutMe___id'
-  | 'projects___about___aboutMe___children'
-  | 'projects___about___aboutMe___aboutMe'
-  | 'projects___about___spaceId'
-  | 'projects___about___contentful_id'
-  | 'projects___about___createdAt'
-  | 'projects___about___updatedAt'
-  | 'projects___about___sys___type'
-  | 'projects___about___sys___revision'
-  | 'projects___about___node_locale'
-  | 'projects___about___childContentfulAboutAboutMeTextNode___id'
-  | 'projects___about___childContentfulAboutAboutMeTextNode___children'
-  | 'projects___about___childContentfulAboutAboutMeTextNode___aboutMe'
-  | 'projects___spaceId'
-  | 'projects___contentful_id'
-  | 'projects___createdAt'
-  | 'projects___updatedAt'
-  | 'projects___sys___type'
-  | 'projects___sys___revision'
-  | 'projects___node_locale'
-  | 'aboutMe___id'
-  | 'aboutMe___parent___id'
-  | 'aboutMe___parent___parent___id'
-  | 'aboutMe___parent___parent___children'
-  | 'aboutMe___parent___children'
-  | 'aboutMe___parent___children___id'
-  | 'aboutMe___parent___children___children'
-  | 'aboutMe___parent___internal___content'
-  | 'aboutMe___parent___internal___contentDigest'
-  | 'aboutMe___parent___internal___description'
-  | 'aboutMe___parent___internal___fieldOwners'
-  | 'aboutMe___parent___internal___ignoreType'
-  | 'aboutMe___parent___internal___mediaType'
-  | 'aboutMe___parent___internal___owner'
-  | 'aboutMe___parent___internal___type'
-  | 'aboutMe___children'
-  | 'aboutMe___children___id'
-  | 'aboutMe___children___parent___id'
-  | 'aboutMe___children___parent___children'
-  | 'aboutMe___children___children'
-  | 'aboutMe___children___children___id'
-  | 'aboutMe___children___children___children'
-  | 'aboutMe___children___internal___content'
-  | 'aboutMe___children___internal___contentDigest'
-  | 'aboutMe___children___internal___description'
-  | 'aboutMe___children___internal___fieldOwners'
-  | 'aboutMe___children___internal___ignoreType'
-  | 'aboutMe___children___internal___mediaType'
-  | 'aboutMe___children___internal___owner'
-  | 'aboutMe___children___internal___type'
-  | 'aboutMe___internal___content'
-  | 'aboutMe___internal___contentDigest'
-  | 'aboutMe___internal___description'
-  | 'aboutMe___internal___fieldOwners'
-  | 'aboutMe___internal___ignoreType'
-  | 'aboutMe___internal___mediaType'
-  | 'aboutMe___internal___owner'
-  | 'aboutMe___internal___type'
-  | 'aboutMe___aboutMe'
-  | 'aboutMe___sys___type'
-  | 'aboutMe___childMarkdownRemark___id'
-  | 'aboutMe___childMarkdownRemark___frontmatter___title'
-  | 'aboutMe___childMarkdownRemark___excerpt'
-  | 'aboutMe___childMarkdownRemark___rawMarkdownBody'
-  | 'aboutMe___childMarkdownRemark___html'
-  | 'aboutMe___childMarkdownRemark___htmlAst'
-  | 'aboutMe___childMarkdownRemark___excerptAst'
-  | 'aboutMe___childMarkdownRemark___headings'
-  | 'aboutMe___childMarkdownRemark___headings___id'
-  | 'aboutMe___childMarkdownRemark___headings___value'
-  | 'aboutMe___childMarkdownRemark___headings___depth'
-  | 'aboutMe___childMarkdownRemark___timeToRead'
-  | 'aboutMe___childMarkdownRemark___tableOfContents'
-  | 'aboutMe___childMarkdownRemark___wordCount___paragraphs'
-  | 'aboutMe___childMarkdownRemark___wordCount___sentences'
-  | 'aboutMe___childMarkdownRemark___wordCount___words'
-  | 'aboutMe___childMarkdownRemark___parent___id'
-  | 'aboutMe___childMarkdownRemark___parent___children'
-  | 'aboutMe___childMarkdownRemark___children'
-  | 'aboutMe___childMarkdownRemark___children___id'
-  | 'aboutMe___childMarkdownRemark___children___children'
-  | 'aboutMe___childMarkdownRemark___internal___content'
-  | 'aboutMe___childMarkdownRemark___internal___contentDigest'
-  | 'aboutMe___childMarkdownRemark___internal___description'
-  | 'aboutMe___childMarkdownRemark___internal___fieldOwners'
-  | 'aboutMe___childMarkdownRemark___internal___ignoreType'
-  | 'aboutMe___childMarkdownRemark___internal___mediaType'
-  | 'aboutMe___childMarkdownRemark___internal___owner'
-  | 'aboutMe___childMarkdownRemark___internal___type'
-  | 'spaceId'
-  | 'contentful_id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'sys___type'
-  | 'sys___revision'
-  | 'sys___contentType___sys___type'
-  | 'sys___contentType___sys___linkType'
-  | 'sys___contentType___sys___id'
-  | 'sys___contentType___sys___contentful_id'
-  | 'node_locale'
-  | 'childContentfulAboutAboutMeTextNode___id'
-  | 'childContentfulAboutAboutMeTextNode___parent___id'
-  | 'childContentfulAboutAboutMeTextNode___parent___parent___id'
-  | 'childContentfulAboutAboutMeTextNode___parent___parent___children'
-  | 'childContentfulAboutAboutMeTextNode___parent___children'
-  | 'childContentfulAboutAboutMeTextNode___parent___children___id'
-  | 'childContentfulAboutAboutMeTextNode___parent___children___children'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___content'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___contentDigest'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___description'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___fieldOwners'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___ignoreType'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___mediaType'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___owner'
-  | 'childContentfulAboutAboutMeTextNode___parent___internal___type'
-  | 'childContentfulAboutAboutMeTextNode___children'
-  | 'childContentfulAboutAboutMeTextNode___children___id'
-  | 'childContentfulAboutAboutMeTextNode___children___parent___id'
-  | 'childContentfulAboutAboutMeTextNode___children___parent___children'
-  | 'childContentfulAboutAboutMeTextNode___children___children'
-  | 'childContentfulAboutAboutMeTextNode___children___children___id'
-  | 'childContentfulAboutAboutMeTextNode___children___children___children'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___content'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___contentDigest'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___description'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___fieldOwners'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___ignoreType'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___mediaType'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___owner'
-  | 'childContentfulAboutAboutMeTextNode___children___internal___type'
-  | 'childContentfulAboutAboutMeTextNode___internal___content'
-  | 'childContentfulAboutAboutMeTextNode___internal___contentDigest'
-  | 'childContentfulAboutAboutMeTextNode___internal___description'
-  | 'childContentfulAboutAboutMeTextNode___internal___fieldOwners'
-  | 'childContentfulAboutAboutMeTextNode___internal___ignoreType'
-  | 'childContentfulAboutAboutMeTextNode___internal___mediaType'
-  | 'childContentfulAboutAboutMeTextNode___internal___owner'
-  | 'childContentfulAboutAboutMeTextNode___internal___type'
-  | 'childContentfulAboutAboutMeTextNode___aboutMe'
-  | 'childContentfulAboutAboutMeTextNode___sys___type'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___frontmatter___title'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___rawMarkdownBody'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___html'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___htmlAst'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerptAst'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings___id'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings___value'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings___depth'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___timeToRead'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___tableOfContents'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___wordCount___paragraphs'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___wordCount___sentences'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___wordCount___words'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___parent___id'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___parent___children'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___children'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___children___id'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___children___children'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___content'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___contentDigest'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___description'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___fieldOwners'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___ignoreType'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___mediaType'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___owner'
-  | 'childContentfulAboutAboutMeTextNode___childMarkdownRemark___internal___type';
-
-export type ContentfulAboutFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  roles?: Maybe<StringQueryOperatorInput>;
-  mediumUser?: Maybe<StringQueryOperatorInput>;
-  socialLinks?: Maybe<ContentfulSocialLinkFilterListInput>;
-  profile?: Maybe<ContentfulAssetFilterInput>;
-  projects?: Maybe<ContentfulProjectFilterListInput>;
-  aboutMe?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulAboutSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-  childContentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-};
-
-export type ContentfulAboutFilterListInput = {
-  elemMatch?: Maybe<ContentfulAboutFilterInput>;
-};
-
-export type ContentfulAboutGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulAboutEdge>;
-  nodes: Array<ContentfulAbout>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulAboutSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulAboutFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type ContentfulAboutSys = {
-  type?: Maybe<Scalars['String']>;
-  revision?: Maybe<Scalars['Int']>;
-  contentType?: Maybe<ContentfulAboutSysContentType>;
-};
-
-export type ContentfulAboutSysContentType = {
-  sys?: Maybe<ContentfulAboutSysContentTypeSys>;
-};
-
-export type ContentfulAboutSysContentTypeFilterInput = {
-  sys?: Maybe<ContentfulAboutSysContentTypeSysFilterInput>;
-};
-
-export type ContentfulAboutSysContentTypeSys = {
-  type?: Maybe<Scalars['String']>;
-  linkType?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulAboutSysContentTypeSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  linkType?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulAboutSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  revision?: Maybe<IntQueryOperatorInput>;
-  contentType?: Maybe<ContentfulAboutSysContentTypeFilterInput>;
-};
-
 export type ContentfulAsset = Node & {
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -2086,10 +1100,77 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___name'
   | 'author___title'
   | 'author___company'
+  | 'author___roles'
   | 'author___email'
   | 'author___facebook'
   | 'author___twitter'
   | 'author___github'
+  | 'author___profile___id'
+  | 'author___profile___parent___id'
+  | 'author___profile___parent___children'
+  | 'author___profile___children'
+  | 'author___profile___children___id'
+  | 'author___profile___children___children'
+  | 'author___profile___internal___content'
+  | 'author___profile___internal___contentDigest'
+  | 'author___profile___internal___description'
+  | 'author___profile___internal___fieldOwners'
+  | 'author___profile___internal___ignoreType'
+  | 'author___profile___internal___mediaType'
+  | 'author___profile___internal___owner'
+  | 'author___profile___internal___type'
+  | 'author___profile___contentful_id'
+  | 'author___profile___spaceId'
+  | 'author___profile___createdAt'
+  | 'author___profile___updatedAt'
+  | 'author___profile___file___url'
+  | 'author___profile___file___fileName'
+  | 'author___profile___file___contentType'
+  | 'author___profile___title'
+  | 'author___profile___description'
+  | 'author___profile___node_locale'
+  | 'author___profile___sys___type'
+  | 'author___profile___sys___revision'
+  | 'author___profile___fixed___base64'
+  | 'author___profile___fixed___tracedSVG'
+  | 'author___profile___fixed___aspectRatio'
+  | 'author___profile___fixed___width'
+  | 'author___profile___fixed___height'
+  | 'author___profile___fixed___src'
+  | 'author___profile___fixed___srcSet'
+  | 'author___profile___fixed___srcWebp'
+  | 'author___profile___fixed___srcSetWebp'
+  | 'author___profile___resolutions___base64'
+  | 'author___profile___resolutions___tracedSVG'
+  | 'author___profile___resolutions___aspectRatio'
+  | 'author___profile___resolutions___width'
+  | 'author___profile___resolutions___height'
+  | 'author___profile___resolutions___src'
+  | 'author___profile___resolutions___srcSet'
+  | 'author___profile___resolutions___srcWebp'
+  | 'author___profile___resolutions___srcSetWebp'
+  | 'author___profile___fluid___base64'
+  | 'author___profile___fluid___tracedSVG'
+  | 'author___profile___fluid___aspectRatio'
+  | 'author___profile___fluid___src'
+  | 'author___profile___fluid___srcSet'
+  | 'author___profile___fluid___srcWebp'
+  | 'author___profile___fluid___srcSetWebp'
+  | 'author___profile___fluid___sizes'
+  | 'author___profile___sizes___base64'
+  | 'author___profile___sizes___tracedSVG'
+  | 'author___profile___sizes___aspectRatio'
+  | 'author___profile___sizes___src'
+  | 'author___profile___sizes___srcSet'
+  | 'author___profile___sizes___srcWebp'
+  | 'author___profile___sizes___srcSetWebp'
+  | 'author___profile___sizes___sizes'
+  | 'author___profile___resize___base64'
+  | 'author___profile___resize___tracedSVG'
+  | 'author___profile___resize___src'
+  | 'author___profile___resize___width'
+  | 'author___profile___resize___height'
+  | 'author___profile___resize___aspectRatio'
   | 'author___image___id'
   | 'author___image___parent___id'
   | 'author___image___parent___children'
@@ -2156,6 +1237,49 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___image___resize___width'
   | 'author___image___resize___height'
   | 'author___image___resize___aspectRatio'
+  | 'author___socialLinks'
+  | 'author___socialLinks___id'
+  | 'author___socialLinks___parent___id'
+  | 'author___socialLinks___parent___children'
+  | 'author___socialLinks___children'
+  | 'author___socialLinks___children___id'
+  | 'author___socialLinks___children___children'
+  | 'author___socialLinks___internal___content'
+  | 'author___socialLinks___internal___contentDigest'
+  | 'author___socialLinks___internal___description'
+  | 'author___socialLinks___internal___fieldOwners'
+  | 'author___socialLinks___internal___ignoreType'
+  | 'author___socialLinks___internal___mediaType'
+  | 'author___socialLinks___internal___owner'
+  | 'author___socialLinks___internal___type'
+  | 'author___socialLinks___name'
+  | 'author___socialLinks___url'
+  | 'author___socialLinks___fontAwesomeIcon'
+  | 'author___socialLinks___spaceId'
+  | 'author___socialLinks___contentful_id'
+  | 'author___socialLinks___createdAt'
+  | 'author___socialLinks___updatedAt'
+  | 'author___socialLinks___sys___type'
+  | 'author___socialLinks___sys___revision'
+  | 'author___socialLinks___node_locale'
+  | 'author___socialLinks___person'
+  | 'author___socialLinks___person___id'
+  | 'author___socialLinks___person___children'
+  | 'author___socialLinks___person___name'
+  | 'author___socialLinks___person___title'
+  | 'author___socialLinks___person___company'
+  | 'author___socialLinks___person___roles'
+  | 'author___socialLinks___person___email'
+  | 'author___socialLinks___person___facebook'
+  | 'author___socialLinks___person___twitter'
+  | 'author___socialLinks___person___github'
+  | 'author___socialLinks___person___socialLinks'
+  | 'author___socialLinks___person___blog_post'
+  | 'author___socialLinks___person___spaceId'
+  | 'author___socialLinks___person___contentful_id'
+  | 'author___socialLinks___person___createdAt'
+  | 'author___socialLinks___person___updatedAt'
+  | 'author___socialLinks___person___node_locale'
   | 'author___blog_post'
   | 'author___blog_post___id'
   | 'author___blog_post___parent___id'
@@ -2189,10 +1313,12 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___blog_post___author___name'
   | 'author___blog_post___author___title'
   | 'author___blog_post___author___company'
+  | 'author___blog_post___author___roles'
   | 'author___blog_post___author___email'
   | 'author___blog_post___author___facebook'
   | 'author___blog_post___author___twitter'
   | 'author___blog_post___author___github'
+  | 'author___blog_post___author___socialLinks'
   | 'author___blog_post___author___blog_post'
   | 'author___blog_post___author___spaceId'
   | 'author___blog_post___author___contentful_id'
@@ -2803,225 +1929,6 @@ export type ContentfulContentTypeSysFilterInput = {
   type?: Maybe<StringQueryOperatorInput>;
 };
 
-export type ContentfulDante = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  spaceId?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  sys?: Maybe<ContentfulDanteSys>;
-  node_locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulDanteCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulDanteUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulDanteConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulDanteEdge>;
-  nodes: Array<ContentfulDante>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentfulDanteGroupConnection>;
-};
-
-
-export type ContentfulDanteConnectionDistinctArgs = {
-  field: ContentfulDanteFieldsEnum;
-};
-
-
-export type ContentfulDanteConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentfulDanteFieldsEnum;
-};
-
-export type ContentfulDanteEdge = {
-  next?: Maybe<ContentfulDante>;
-  node: ContentfulDante;
-  previous?: Maybe<ContentfulDante>;
-};
-
-export type ContentfulDanteFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'spaceId'
-  | 'contentful_id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'sys___type'
-  | 'sys___revision'
-  | 'sys___contentType___sys___type'
-  | 'sys___contentType___sys___linkType'
-  | 'sys___contentType___sys___id'
-  | 'sys___contentType___sys___contentful_id'
-  | 'node_locale';
-
-export type ContentfulDanteFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulDanteSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulDanteGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulDanteEdge>;
-  nodes: Array<ContentfulDante>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulDanteSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulDanteFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type ContentfulDanteSys = {
-  type?: Maybe<Scalars['String']>;
-  revision?: Maybe<Scalars['Int']>;
-  contentType?: Maybe<ContentfulDanteSysContentType>;
-};
-
-export type ContentfulDanteSysContentType = {
-  sys?: Maybe<ContentfulDanteSysContentTypeSys>;
-};
-
-export type ContentfulDanteSysContentTypeFilterInput = {
-  sys?: Maybe<ContentfulDanteSysContentTypeSysFilterInput>;
-};
-
-export type ContentfulDanteSysContentTypeSys = {
-  type?: Maybe<Scalars['String']>;
-  linkType?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulDanteSysContentTypeSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  linkType?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulDanteSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  revision?: Maybe<IntQueryOperatorInput>;
-  contentType?: Maybe<ContentfulDanteSysContentTypeFilterInput>;
-};
-
 export type ContentfulFixed = {
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
@@ -3095,11 +2002,14 @@ export type ContentfulPerson = Node & {
   name?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   company?: Maybe<Scalars['String']>;
+  roles?: Maybe<Array<Maybe<Scalars['String']>>>;
   email?: Maybe<Scalars['String']>;
   facebook?: Maybe<Scalars['String']>;
   twitter?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
+  profile?: Maybe<ContentfulAsset>;
   image?: Maybe<ContentfulAsset>;
+  socialLinks?: Maybe<Array<Maybe<ContentfulSocialLink>>>;
   blog_post?: Maybe<Array<Maybe<ContentfulBlogPost>>>;
   shortBio?: Maybe<ContentfulPersonShortBioTextNode>;
   spaceId?: Maybe<Scalars['String']>;
@@ -3244,10 +2154,102 @@ export type ContentfulPersonFieldsEnum =
   | 'name'
   | 'title'
   | 'company'
+  | 'roles'
   | 'email'
   | 'facebook'
   | 'twitter'
   | 'github'
+  | 'profile___id'
+  | 'profile___parent___id'
+  | 'profile___parent___parent___id'
+  | 'profile___parent___parent___children'
+  | 'profile___parent___children'
+  | 'profile___parent___children___id'
+  | 'profile___parent___children___children'
+  | 'profile___parent___internal___content'
+  | 'profile___parent___internal___contentDigest'
+  | 'profile___parent___internal___description'
+  | 'profile___parent___internal___fieldOwners'
+  | 'profile___parent___internal___ignoreType'
+  | 'profile___parent___internal___mediaType'
+  | 'profile___parent___internal___owner'
+  | 'profile___parent___internal___type'
+  | 'profile___children'
+  | 'profile___children___id'
+  | 'profile___children___parent___id'
+  | 'profile___children___parent___children'
+  | 'profile___children___children'
+  | 'profile___children___children___id'
+  | 'profile___children___children___children'
+  | 'profile___children___internal___content'
+  | 'profile___children___internal___contentDigest'
+  | 'profile___children___internal___description'
+  | 'profile___children___internal___fieldOwners'
+  | 'profile___children___internal___ignoreType'
+  | 'profile___children___internal___mediaType'
+  | 'profile___children___internal___owner'
+  | 'profile___children___internal___type'
+  | 'profile___internal___content'
+  | 'profile___internal___contentDigest'
+  | 'profile___internal___description'
+  | 'profile___internal___fieldOwners'
+  | 'profile___internal___ignoreType'
+  | 'profile___internal___mediaType'
+  | 'profile___internal___owner'
+  | 'profile___internal___type'
+  | 'profile___contentful_id'
+  | 'profile___spaceId'
+  | 'profile___createdAt'
+  | 'profile___updatedAt'
+  | 'profile___file___url'
+  | 'profile___file___details___size'
+  | 'profile___file___fileName'
+  | 'profile___file___contentType'
+  | 'profile___title'
+  | 'profile___description'
+  | 'profile___node_locale'
+  | 'profile___sys___type'
+  | 'profile___sys___revision'
+  | 'profile___fixed___base64'
+  | 'profile___fixed___tracedSVG'
+  | 'profile___fixed___aspectRatio'
+  | 'profile___fixed___width'
+  | 'profile___fixed___height'
+  | 'profile___fixed___src'
+  | 'profile___fixed___srcSet'
+  | 'profile___fixed___srcWebp'
+  | 'profile___fixed___srcSetWebp'
+  | 'profile___resolutions___base64'
+  | 'profile___resolutions___tracedSVG'
+  | 'profile___resolutions___aspectRatio'
+  | 'profile___resolutions___width'
+  | 'profile___resolutions___height'
+  | 'profile___resolutions___src'
+  | 'profile___resolutions___srcSet'
+  | 'profile___resolutions___srcWebp'
+  | 'profile___resolutions___srcSetWebp'
+  | 'profile___fluid___base64'
+  | 'profile___fluid___tracedSVG'
+  | 'profile___fluid___aspectRatio'
+  | 'profile___fluid___src'
+  | 'profile___fluid___srcSet'
+  | 'profile___fluid___srcWebp'
+  | 'profile___fluid___srcSetWebp'
+  | 'profile___fluid___sizes'
+  | 'profile___sizes___base64'
+  | 'profile___sizes___tracedSVG'
+  | 'profile___sizes___aspectRatio'
+  | 'profile___sizes___src'
+  | 'profile___sizes___srcSet'
+  | 'profile___sizes___srcWebp'
+  | 'profile___sizes___srcSetWebp'
+  | 'profile___sizes___sizes'
+  | 'profile___resize___base64'
+  | 'profile___resize___tracedSVG'
+  | 'profile___resize___src'
+  | 'profile___resize___width'
+  | 'profile___resize___height'
+  | 'profile___resize___aspectRatio'
   | 'image___id'
   | 'image___parent___id'
   | 'image___parent___parent___id'
@@ -3339,6 +2341,133 @@ export type ContentfulPersonFieldsEnum =
   | 'image___resize___width'
   | 'image___resize___height'
   | 'image___resize___aspectRatio'
+  | 'socialLinks'
+  | 'socialLinks___id'
+  | 'socialLinks___parent___id'
+  | 'socialLinks___parent___parent___id'
+  | 'socialLinks___parent___parent___children'
+  | 'socialLinks___parent___children'
+  | 'socialLinks___parent___children___id'
+  | 'socialLinks___parent___children___children'
+  | 'socialLinks___parent___internal___content'
+  | 'socialLinks___parent___internal___contentDigest'
+  | 'socialLinks___parent___internal___description'
+  | 'socialLinks___parent___internal___fieldOwners'
+  | 'socialLinks___parent___internal___ignoreType'
+  | 'socialLinks___parent___internal___mediaType'
+  | 'socialLinks___parent___internal___owner'
+  | 'socialLinks___parent___internal___type'
+  | 'socialLinks___children'
+  | 'socialLinks___children___id'
+  | 'socialLinks___children___parent___id'
+  | 'socialLinks___children___parent___children'
+  | 'socialLinks___children___children'
+  | 'socialLinks___children___children___id'
+  | 'socialLinks___children___children___children'
+  | 'socialLinks___children___internal___content'
+  | 'socialLinks___children___internal___contentDigest'
+  | 'socialLinks___children___internal___description'
+  | 'socialLinks___children___internal___fieldOwners'
+  | 'socialLinks___children___internal___ignoreType'
+  | 'socialLinks___children___internal___mediaType'
+  | 'socialLinks___children___internal___owner'
+  | 'socialLinks___children___internal___type'
+  | 'socialLinks___internal___content'
+  | 'socialLinks___internal___contentDigest'
+  | 'socialLinks___internal___description'
+  | 'socialLinks___internal___fieldOwners'
+  | 'socialLinks___internal___ignoreType'
+  | 'socialLinks___internal___mediaType'
+  | 'socialLinks___internal___owner'
+  | 'socialLinks___internal___type'
+  | 'socialLinks___name'
+  | 'socialLinks___url'
+  | 'socialLinks___fontAwesomeIcon'
+  | 'socialLinks___spaceId'
+  | 'socialLinks___contentful_id'
+  | 'socialLinks___createdAt'
+  | 'socialLinks___updatedAt'
+  | 'socialLinks___sys___type'
+  | 'socialLinks___sys___revision'
+  | 'socialLinks___node_locale'
+  | 'socialLinks___person'
+  | 'socialLinks___person___id'
+  | 'socialLinks___person___parent___id'
+  | 'socialLinks___person___parent___children'
+  | 'socialLinks___person___children'
+  | 'socialLinks___person___children___id'
+  | 'socialLinks___person___children___children'
+  | 'socialLinks___person___internal___content'
+  | 'socialLinks___person___internal___contentDigest'
+  | 'socialLinks___person___internal___description'
+  | 'socialLinks___person___internal___fieldOwners'
+  | 'socialLinks___person___internal___ignoreType'
+  | 'socialLinks___person___internal___mediaType'
+  | 'socialLinks___person___internal___owner'
+  | 'socialLinks___person___internal___type'
+  | 'socialLinks___person___name'
+  | 'socialLinks___person___title'
+  | 'socialLinks___person___company'
+  | 'socialLinks___person___roles'
+  | 'socialLinks___person___email'
+  | 'socialLinks___person___facebook'
+  | 'socialLinks___person___twitter'
+  | 'socialLinks___person___github'
+  | 'socialLinks___person___profile___id'
+  | 'socialLinks___person___profile___children'
+  | 'socialLinks___person___profile___contentful_id'
+  | 'socialLinks___person___profile___spaceId'
+  | 'socialLinks___person___profile___createdAt'
+  | 'socialLinks___person___profile___updatedAt'
+  | 'socialLinks___person___profile___title'
+  | 'socialLinks___person___profile___description'
+  | 'socialLinks___person___profile___node_locale'
+  | 'socialLinks___person___image___id'
+  | 'socialLinks___person___image___children'
+  | 'socialLinks___person___image___contentful_id'
+  | 'socialLinks___person___image___spaceId'
+  | 'socialLinks___person___image___createdAt'
+  | 'socialLinks___person___image___updatedAt'
+  | 'socialLinks___person___image___title'
+  | 'socialLinks___person___image___description'
+  | 'socialLinks___person___image___node_locale'
+  | 'socialLinks___person___socialLinks'
+  | 'socialLinks___person___socialLinks___id'
+  | 'socialLinks___person___socialLinks___children'
+  | 'socialLinks___person___socialLinks___name'
+  | 'socialLinks___person___socialLinks___url'
+  | 'socialLinks___person___socialLinks___fontAwesomeIcon'
+  | 'socialLinks___person___socialLinks___spaceId'
+  | 'socialLinks___person___socialLinks___contentful_id'
+  | 'socialLinks___person___socialLinks___createdAt'
+  | 'socialLinks___person___socialLinks___updatedAt'
+  | 'socialLinks___person___socialLinks___node_locale'
+  | 'socialLinks___person___socialLinks___person'
+  | 'socialLinks___person___blog_post'
+  | 'socialLinks___person___blog_post___id'
+  | 'socialLinks___person___blog_post___children'
+  | 'socialLinks___person___blog_post___title'
+  | 'socialLinks___person___blog_post___slug'
+  | 'socialLinks___person___blog_post___publishDate'
+  | 'socialLinks___person___blog_post___tags'
+  | 'socialLinks___person___blog_post___spaceId'
+  | 'socialLinks___person___blog_post___contentful_id'
+  | 'socialLinks___person___blog_post___createdAt'
+  | 'socialLinks___person___blog_post___updatedAt'
+  | 'socialLinks___person___blog_post___node_locale'
+  | 'socialLinks___person___shortBio___id'
+  | 'socialLinks___person___shortBio___children'
+  | 'socialLinks___person___shortBio___shortBio'
+  | 'socialLinks___person___spaceId'
+  | 'socialLinks___person___contentful_id'
+  | 'socialLinks___person___createdAt'
+  | 'socialLinks___person___updatedAt'
+  | 'socialLinks___person___sys___type'
+  | 'socialLinks___person___sys___revision'
+  | 'socialLinks___person___node_locale'
+  | 'socialLinks___person___childContentfulPersonShortBioTextNode___id'
+  | 'socialLinks___person___childContentfulPersonShortBioTextNode___children'
+  | 'socialLinks___person___childContentfulPersonShortBioTextNode___shortBio'
   | 'blog_post'
   | 'blog_post___id'
   | 'blog_post___parent___id'
@@ -3465,10 +2594,20 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___author___name'
   | 'blog_post___author___title'
   | 'blog_post___author___company'
+  | 'blog_post___author___roles'
   | 'blog_post___author___email'
   | 'blog_post___author___facebook'
   | 'blog_post___author___twitter'
   | 'blog_post___author___github'
+  | 'blog_post___author___profile___id'
+  | 'blog_post___author___profile___children'
+  | 'blog_post___author___profile___contentful_id'
+  | 'blog_post___author___profile___spaceId'
+  | 'blog_post___author___profile___createdAt'
+  | 'blog_post___author___profile___updatedAt'
+  | 'blog_post___author___profile___title'
+  | 'blog_post___author___profile___description'
+  | 'blog_post___author___profile___node_locale'
   | 'blog_post___author___image___id'
   | 'blog_post___author___image___children'
   | 'blog_post___author___image___contentful_id'
@@ -3478,6 +2617,18 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___author___image___title'
   | 'blog_post___author___image___description'
   | 'blog_post___author___image___node_locale'
+  | 'blog_post___author___socialLinks'
+  | 'blog_post___author___socialLinks___id'
+  | 'blog_post___author___socialLinks___children'
+  | 'blog_post___author___socialLinks___name'
+  | 'blog_post___author___socialLinks___url'
+  | 'blog_post___author___socialLinks___fontAwesomeIcon'
+  | 'blog_post___author___socialLinks___spaceId'
+  | 'blog_post___author___socialLinks___contentful_id'
+  | 'blog_post___author___socialLinks___createdAt'
+  | 'blog_post___author___socialLinks___updatedAt'
+  | 'blog_post___author___socialLinks___node_locale'
+  | 'blog_post___author___socialLinks___person'
   | 'blog_post___author___blog_post'
   | 'blog_post___author___blog_post___id'
   | 'blog_post___author___blog_post___children'
@@ -3772,11 +2923,14 @@ export type ContentfulPersonFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
+  roles?: Maybe<StringQueryOperatorInput>;
   email?: Maybe<StringQueryOperatorInput>;
   facebook?: Maybe<StringQueryOperatorInput>;
   twitter?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
+  profile?: Maybe<ContentfulAssetFilterInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  socialLinks?: Maybe<ContentfulSocialLinkFilterListInput>;
   blog_post?: Maybe<ContentfulBlogPostFilterListInput>;
   shortBio?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
@@ -3786,6 +2940,10 @@ export type ContentfulPersonFilterInput = {
   sys?: Maybe<ContentfulPersonSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   childContentfulPersonShortBioTextNode?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
+};
+
+export type ContentfulPersonFilterListInput = {
+  elemMatch?: Maybe<ContentfulPersonFilterInput>;
 };
 
 export type ContentfulPersonGroupConnection = {
@@ -4048,605 +3206,6 @@ export type ContentfulPersonSysFilterInput = {
   contentType?: Maybe<ContentfulPersonSysContentTypeFilterInput>;
 };
 
-export type ContentfulProject = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  publishedDate?: Maybe<Scalars['Date']>;
-  repositoryUrl?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  projectUrl?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  logo?: Maybe<ContentfulAsset>;
-  about?: Maybe<Array<Maybe<ContentfulAbout>>>;
-  spaceId?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  sys?: Maybe<ContentfulProjectSys>;
-  node_locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulProjectPublishedDateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulProjectCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type ContentfulProjectUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulProjectConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulProjectEdge>;
-  nodes: Array<ContentfulProject>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentfulProjectGroupConnection>;
-};
-
-
-export type ContentfulProjectConnectionDistinctArgs = {
-  field: ContentfulProjectFieldsEnum;
-};
-
-
-export type ContentfulProjectConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentfulProjectFieldsEnum;
-};
-
-export type ContentfulProjectEdge = {
-  next?: Maybe<ContentfulProject>;
-  node: ContentfulProject;
-  previous?: Maybe<ContentfulProject>;
-};
-
-export type ContentfulProjectFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'publishedDate'
-  | 'repositoryUrl'
-  | 'description'
-  | 'projectUrl'
-  | 'type'
-  | 'logo___id'
-  | 'logo___parent___id'
-  | 'logo___parent___parent___id'
-  | 'logo___parent___parent___children'
-  | 'logo___parent___children'
-  | 'logo___parent___children___id'
-  | 'logo___parent___children___children'
-  | 'logo___parent___internal___content'
-  | 'logo___parent___internal___contentDigest'
-  | 'logo___parent___internal___description'
-  | 'logo___parent___internal___fieldOwners'
-  | 'logo___parent___internal___ignoreType'
-  | 'logo___parent___internal___mediaType'
-  | 'logo___parent___internal___owner'
-  | 'logo___parent___internal___type'
-  | 'logo___children'
-  | 'logo___children___id'
-  | 'logo___children___parent___id'
-  | 'logo___children___parent___children'
-  | 'logo___children___children'
-  | 'logo___children___children___id'
-  | 'logo___children___children___children'
-  | 'logo___children___internal___content'
-  | 'logo___children___internal___contentDigest'
-  | 'logo___children___internal___description'
-  | 'logo___children___internal___fieldOwners'
-  | 'logo___children___internal___ignoreType'
-  | 'logo___children___internal___mediaType'
-  | 'logo___children___internal___owner'
-  | 'logo___children___internal___type'
-  | 'logo___internal___content'
-  | 'logo___internal___contentDigest'
-  | 'logo___internal___description'
-  | 'logo___internal___fieldOwners'
-  | 'logo___internal___ignoreType'
-  | 'logo___internal___mediaType'
-  | 'logo___internal___owner'
-  | 'logo___internal___type'
-  | 'logo___contentful_id'
-  | 'logo___spaceId'
-  | 'logo___createdAt'
-  | 'logo___updatedAt'
-  | 'logo___file___url'
-  | 'logo___file___details___size'
-  | 'logo___file___fileName'
-  | 'logo___file___contentType'
-  | 'logo___title'
-  | 'logo___description'
-  | 'logo___node_locale'
-  | 'logo___sys___type'
-  | 'logo___sys___revision'
-  | 'logo___fixed___base64'
-  | 'logo___fixed___tracedSVG'
-  | 'logo___fixed___aspectRatio'
-  | 'logo___fixed___width'
-  | 'logo___fixed___height'
-  | 'logo___fixed___src'
-  | 'logo___fixed___srcSet'
-  | 'logo___fixed___srcWebp'
-  | 'logo___fixed___srcSetWebp'
-  | 'logo___resolutions___base64'
-  | 'logo___resolutions___tracedSVG'
-  | 'logo___resolutions___aspectRatio'
-  | 'logo___resolutions___width'
-  | 'logo___resolutions___height'
-  | 'logo___resolutions___src'
-  | 'logo___resolutions___srcSet'
-  | 'logo___resolutions___srcWebp'
-  | 'logo___resolutions___srcSetWebp'
-  | 'logo___fluid___base64'
-  | 'logo___fluid___tracedSVG'
-  | 'logo___fluid___aspectRatio'
-  | 'logo___fluid___src'
-  | 'logo___fluid___srcSet'
-  | 'logo___fluid___srcWebp'
-  | 'logo___fluid___srcSetWebp'
-  | 'logo___fluid___sizes'
-  | 'logo___sizes___base64'
-  | 'logo___sizes___tracedSVG'
-  | 'logo___sizes___aspectRatio'
-  | 'logo___sizes___src'
-  | 'logo___sizes___srcSet'
-  | 'logo___sizes___srcWebp'
-  | 'logo___sizes___srcSetWebp'
-  | 'logo___sizes___sizes'
-  | 'logo___resize___base64'
-  | 'logo___resize___tracedSVG'
-  | 'logo___resize___src'
-  | 'logo___resize___width'
-  | 'logo___resize___height'
-  | 'logo___resize___aspectRatio'
-  | 'about'
-  | 'about___id'
-  | 'about___parent___id'
-  | 'about___parent___parent___id'
-  | 'about___parent___parent___children'
-  | 'about___parent___children'
-  | 'about___parent___children___id'
-  | 'about___parent___children___children'
-  | 'about___parent___internal___content'
-  | 'about___parent___internal___contentDigest'
-  | 'about___parent___internal___description'
-  | 'about___parent___internal___fieldOwners'
-  | 'about___parent___internal___ignoreType'
-  | 'about___parent___internal___mediaType'
-  | 'about___parent___internal___owner'
-  | 'about___parent___internal___type'
-  | 'about___children'
-  | 'about___children___id'
-  | 'about___children___parent___id'
-  | 'about___children___parent___children'
-  | 'about___children___children'
-  | 'about___children___children___id'
-  | 'about___children___children___children'
-  | 'about___children___internal___content'
-  | 'about___children___internal___contentDigest'
-  | 'about___children___internal___description'
-  | 'about___children___internal___fieldOwners'
-  | 'about___children___internal___ignoreType'
-  | 'about___children___internal___mediaType'
-  | 'about___children___internal___owner'
-  | 'about___children___internal___type'
-  | 'about___internal___content'
-  | 'about___internal___contentDigest'
-  | 'about___internal___description'
-  | 'about___internal___fieldOwners'
-  | 'about___internal___ignoreType'
-  | 'about___internal___mediaType'
-  | 'about___internal___owner'
-  | 'about___internal___type'
-  | 'about___name'
-  | 'about___description'
-  | 'about___roles'
-  | 'about___mediumUser'
-  | 'about___socialLinks'
-  | 'about___socialLinks___id'
-  | 'about___socialLinks___parent___id'
-  | 'about___socialLinks___parent___children'
-  | 'about___socialLinks___children'
-  | 'about___socialLinks___children___id'
-  | 'about___socialLinks___children___children'
-  | 'about___socialLinks___internal___content'
-  | 'about___socialLinks___internal___contentDigest'
-  | 'about___socialLinks___internal___description'
-  | 'about___socialLinks___internal___fieldOwners'
-  | 'about___socialLinks___internal___ignoreType'
-  | 'about___socialLinks___internal___mediaType'
-  | 'about___socialLinks___internal___owner'
-  | 'about___socialLinks___internal___type'
-  | 'about___socialLinks___name'
-  | 'about___socialLinks___url'
-  | 'about___socialLinks___fontAwesomeIcon'
-  | 'about___socialLinks___about'
-  | 'about___socialLinks___about___id'
-  | 'about___socialLinks___about___children'
-  | 'about___socialLinks___about___name'
-  | 'about___socialLinks___about___description'
-  | 'about___socialLinks___about___roles'
-  | 'about___socialLinks___about___mediumUser'
-  | 'about___socialLinks___about___socialLinks'
-  | 'about___socialLinks___about___projects'
-  | 'about___socialLinks___about___spaceId'
-  | 'about___socialLinks___about___contentful_id'
-  | 'about___socialLinks___about___createdAt'
-  | 'about___socialLinks___about___updatedAt'
-  | 'about___socialLinks___about___node_locale'
-  | 'about___socialLinks___spaceId'
-  | 'about___socialLinks___contentful_id'
-  | 'about___socialLinks___createdAt'
-  | 'about___socialLinks___updatedAt'
-  | 'about___socialLinks___sys___type'
-  | 'about___socialLinks___sys___revision'
-  | 'about___socialLinks___node_locale'
-  | 'about___profile___id'
-  | 'about___profile___parent___id'
-  | 'about___profile___parent___children'
-  | 'about___profile___children'
-  | 'about___profile___children___id'
-  | 'about___profile___children___children'
-  | 'about___profile___internal___content'
-  | 'about___profile___internal___contentDigest'
-  | 'about___profile___internal___description'
-  | 'about___profile___internal___fieldOwners'
-  | 'about___profile___internal___ignoreType'
-  | 'about___profile___internal___mediaType'
-  | 'about___profile___internal___owner'
-  | 'about___profile___internal___type'
-  | 'about___profile___contentful_id'
-  | 'about___profile___spaceId'
-  | 'about___profile___createdAt'
-  | 'about___profile___updatedAt'
-  | 'about___profile___file___url'
-  | 'about___profile___file___fileName'
-  | 'about___profile___file___contentType'
-  | 'about___profile___title'
-  | 'about___profile___description'
-  | 'about___profile___node_locale'
-  | 'about___profile___sys___type'
-  | 'about___profile___sys___revision'
-  | 'about___profile___fixed___base64'
-  | 'about___profile___fixed___tracedSVG'
-  | 'about___profile___fixed___aspectRatio'
-  | 'about___profile___fixed___width'
-  | 'about___profile___fixed___height'
-  | 'about___profile___fixed___src'
-  | 'about___profile___fixed___srcSet'
-  | 'about___profile___fixed___srcWebp'
-  | 'about___profile___fixed___srcSetWebp'
-  | 'about___profile___resolutions___base64'
-  | 'about___profile___resolutions___tracedSVG'
-  | 'about___profile___resolutions___aspectRatio'
-  | 'about___profile___resolutions___width'
-  | 'about___profile___resolutions___height'
-  | 'about___profile___resolutions___src'
-  | 'about___profile___resolutions___srcSet'
-  | 'about___profile___resolutions___srcWebp'
-  | 'about___profile___resolutions___srcSetWebp'
-  | 'about___profile___fluid___base64'
-  | 'about___profile___fluid___tracedSVG'
-  | 'about___profile___fluid___aspectRatio'
-  | 'about___profile___fluid___src'
-  | 'about___profile___fluid___srcSet'
-  | 'about___profile___fluid___srcWebp'
-  | 'about___profile___fluid___srcSetWebp'
-  | 'about___profile___fluid___sizes'
-  | 'about___profile___sizes___base64'
-  | 'about___profile___sizes___tracedSVG'
-  | 'about___profile___sizes___aspectRatio'
-  | 'about___profile___sizes___src'
-  | 'about___profile___sizes___srcSet'
-  | 'about___profile___sizes___srcWebp'
-  | 'about___profile___sizes___srcSetWebp'
-  | 'about___profile___sizes___sizes'
-  | 'about___profile___resize___base64'
-  | 'about___profile___resize___tracedSVG'
-  | 'about___profile___resize___src'
-  | 'about___profile___resize___width'
-  | 'about___profile___resize___height'
-  | 'about___profile___resize___aspectRatio'
-  | 'about___projects'
-  | 'about___projects___id'
-  | 'about___projects___parent___id'
-  | 'about___projects___parent___children'
-  | 'about___projects___children'
-  | 'about___projects___children___id'
-  | 'about___projects___children___children'
-  | 'about___projects___internal___content'
-  | 'about___projects___internal___contentDigest'
-  | 'about___projects___internal___description'
-  | 'about___projects___internal___fieldOwners'
-  | 'about___projects___internal___ignoreType'
-  | 'about___projects___internal___mediaType'
-  | 'about___projects___internal___owner'
-  | 'about___projects___internal___type'
-  | 'about___projects___name'
-  | 'about___projects___publishedDate'
-  | 'about___projects___repositoryUrl'
-  | 'about___projects___description'
-  | 'about___projects___projectUrl'
-  | 'about___projects___type'
-  | 'about___projects___logo___id'
-  | 'about___projects___logo___children'
-  | 'about___projects___logo___contentful_id'
-  | 'about___projects___logo___spaceId'
-  | 'about___projects___logo___createdAt'
-  | 'about___projects___logo___updatedAt'
-  | 'about___projects___logo___title'
-  | 'about___projects___logo___description'
-  | 'about___projects___logo___node_locale'
-  | 'about___projects___about'
-  | 'about___projects___about___id'
-  | 'about___projects___about___children'
-  | 'about___projects___about___name'
-  | 'about___projects___about___description'
-  | 'about___projects___about___roles'
-  | 'about___projects___about___mediumUser'
-  | 'about___projects___about___socialLinks'
-  | 'about___projects___about___projects'
-  | 'about___projects___about___spaceId'
-  | 'about___projects___about___contentful_id'
-  | 'about___projects___about___createdAt'
-  | 'about___projects___about___updatedAt'
-  | 'about___projects___about___node_locale'
-  | 'about___projects___spaceId'
-  | 'about___projects___contentful_id'
-  | 'about___projects___createdAt'
-  | 'about___projects___updatedAt'
-  | 'about___projects___sys___type'
-  | 'about___projects___sys___revision'
-  | 'about___projects___node_locale'
-  | 'about___aboutMe___id'
-  | 'about___aboutMe___parent___id'
-  | 'about___aboutMe___parent___children'
-  | 'about___aboutMe___children'
-  | 'about___aboutMe___children___id'
-  | 'about___aboutMe___children___children'
-  | 'about___aboutMe___internal___content'
-  | 'about___aboutMe___internal___contentDigest'
-  | 'about___aboutMe___internal___description'
-  | 'about___aboutMe___internal___fieldOwners'
-  | 'about___aboutMe___internal___ignoreType'
-  | 'about___aboutMe___internal___mediaType'
-  | 'about___aboutMe___internal___owner'
-  | 'about___aboutMe___internal___type'
-  | 'about___aboutMe___aboutMe'
-  | 'about___aboutMe___sys___type'
-  | 'about___aboutMe___childMarkdownRemark___id'
-  | 'about___aboutMe___childMarkdownRemark___excerpt'
-  | 'about___aboutMe___childMarkdownRemark___rawMarkdownBody'
-  | 'about___aboutMe___childMarkdownRemark___html'
-  | 'about___aboutMe___childMarkdownRemark___htmlAst'
-  | 'about___aboutMe___childMarkdownRemark___excerptAst'
-  | 'about___aboutMe___childMarkdownRemark___headings'
-  | 'about___aboutMe___childMarkdownRemark___timeToRead'
-  | 'about___aboutMe___childMarkdownRemark___tableOfContents'
-  | 'about___aboutMe___childMarkdownRemark___children'
-  | 'about___spaceId'
-  | 'about___contentful_id'
-  | 'about___createdAt'
-  | 'about___updatedAt'
-  | 'about___sys___type'
-  | 'about___sys___revision'
-  | 'about___node_locale'
-  | 'about___childContentfulAboutAboutMeTextNode___id'
-  | 'about___childContentfulAboutAboutMeTextNode___parent___id'
-  | 'about___childContentfulAboutAboutMeTextNode___parent___children'
-  | 'about___childContentfulAboutAboutMeTextNode___children'
-  | 'about___childContentfulAboutAboutMeTextNode___children___id'
-  | 'about___childContentfulAboutAboutMeTextNode___children___children'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___content'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___contentDigest'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___description'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___fieldOwners'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___ignoreType'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___mediaType'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___owner'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___type'
-  | 'about___childContentfulAboutAboutMeTextNode___aboutMe'
-  | 'about___childContentfulAboutAboutMeTextNode___sys___type'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___rawMarkdownBody'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___html'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___htmlAst'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerptAst'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___timeToRead'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___tableOfContents'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___children'
-  | 'spaceId'
-  | 'contentful_id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'sys___type'
-  | 'sys___revision'
-  | 'sys___contentType___sys___type'
-  | 'sys___contentType___sys___linkType'
-  | 'sys___contentType___sys___id'
-  | 'sys___contentType___sys___contentful_id'
-  | 'node_locale';
-
-export type ContentfulProjectFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  publishedDate?: Maybe<DateQueryOperatorInput>;
-  repositoryUrl?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  projectUrl?: Maybe<StringQueryOperatorInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  logo?: Maybe<ContentfulAssetFilterInput>;
-  about?: Maybe<ContentfulAboutFilterListInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulProjectSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulProjectFilterListInput = {
-  elemMatch?: Maybe<ContentfulProjectFilterInput>;
-};
-
-export type ContentfulProjectGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulProjectEdge>;
-  nodes: Array<ContentfulProject>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulProjectSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulProjectFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type ContentfulProjectSys = {
-  type?: Maybe<Scalars['String']>;
-  revision?: Maybe<Scalars['Int']>;
-  contentType?: Maybe<ContentfulProjectSysContentType>;
-};
-
-export type ContentfulProjectSysContentType = {
-  sys?: Maybe<ContentfulProjectSysContentTypeSys>;
-};
-
-export type ContentfulProjectSysContentTypeFilterInput = {
-  sys?: Maybe<ContentfulProjectSysContentTypeSysFilterInput>;
-};
-
-export type ContentfulProjectSysContentTypeSys = {
-  type?: Maybe<Scalars['String']>;
-  linkType?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulProjectSysContentTypeSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  linkType?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulProjectSysFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  revision?: Maybe<IntQueryOperatorInput>;
-  contentType?: Maybe<ContentfulProjectSysContentTypeFilterInput>;
-};
-
 export type ContentfulResize = {
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
@@ -4719,13 +3278,13 @@ export type ContentfulSocialLink = Node & {
   name?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   fontAwesomeIcon?: Maybe<Scalars['String']>;
-  about?: Maybe<Array<Maybe<ContentfulAbout>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulSocialLinkSys>;
   node_locale?: Maybe<Scalars['String']>;
+  person?: Maybe<Array<Maybe<ContentfulPerson>>>;
 };
 
 
@@ -4861,264 +3420,6 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'name'
   | 'url'
   | 'fontAwesomeIcon'
-  | 'about'
-  | 'about___id'
-  | 'about___parent___id'
-  | 'about___parent___parent___id'
-  | 'about___parent___parent___children'
-  | 'about___parent___children'
-  | 'about___parent___children___id'
-  | 'about___parent___children___children'
-  | 'about___parent___internal___content'
-  | 'about___parent___internal___contentDigest'
-  | 'about___parent___internal___description'
-  | 'about___parent___internal___fieldOwners'
-  | 'about___parent___internal___ignoreType'
-  | 'about___parent___internal___mediaType'
-  | 'about___parent___internal___owner'
-  | 'about___parent___internal___type'
-  | 'about___children'
-  | 'about___children___id'
-  | 'about___children___parent___id'
-  | 'about___children___parent___children'
-  | 'about___children___children'
-  | 'about___children___children___id'
-  | 'about___children___children___children'
-  | 'about___children___internal___content'
-  | 'about___children___internal___contentDigest'
-  | 'about___children___internal___description'
-  | 'about___children___internal___fieldOwners'
-  | 'about___children___internal___ignoreType'
-  | 'about___children___internal___mediaType'
-  | 'about___children___internal___owner'
-  | 'about___children___internal___type'
-  | 'about___internal___content'
-  | 'about___internal___contentDigest'
-  | 'about___internal___description'
-  | 'about___internal___fieldOwners'
-  | 'about___internal___ignoreType'
-  | 'about___internal___mediaType'
-  | 'about___internal___owner'
-  | 'about___internal___type'
-  | 'about___name'
-  | 'about___description'
-  | 'about___roles'
-  | 'about___mediumUser'
-  | 'about___socialLinks'
-  | 'about___socialLinks___id'
-  | 'about___socialLinks___parent___id'
-  | 'about___socialLinks___parent___children'
-  | 'about___socialLinks___children'
-  | 'about___socialLinks___children___id'
-  | 'about___socialLinks___children___children'
-  | 'about___socialLinks___internal___content'
-  | 'about___socialLinks___internal___contentDigest'
-  | 'about___socialLinks___internal___description'
-  | 'about___socialLinks___internal___fieldOwners'
-  | 'about___socialLinks___internal___ignoreType'
-  | 'about___socialLinks___internal___mediaType'
-  | 'about___socialLinks___internal___owner'
-  | 'about___socialLinks___internal___type'
-  | 'about___socialLinks___name'
-  | 'about___socialLinks___url'
-  | 'about___socialLinks___fontAwesomeIcon'
-  | 'about___socialLinks___about'
-  | 'about___socialLinks___about___id'
-  | 'about___socialLinks___about___children'
-  | 'about___socialLinks___about___name'
-  | 'about___socialLinks___about___description'
-  | 'about___socialLinks___about___roles'
-  | 'about___socialLinks___about___mediumUser'
-  | 'about___socialLinks___about___socialLinks'
-  | 'about___socialLinks___about___projects'
-  | 'about___socialLinks___about___spaceId'
-  | 'about___socialLinks___about___contentful_id'
-  | 'about___socialLinks___about___createdAt'
-  | 'about___socialLinks___about___updatedAt'
-  | 'about___socialLinks___about___node_locale'
-  | 'about___socialLinks___spaceId'
-  | 'about___socialLinks___contentful_id'
-  | 'about___socialLinks___createdAt'
-  | 'about___socialLinks___updatedAt'
-  | 'about___socialLinks___sys___type'
-  | 'about___socialLinks___sys___revision'
-  | 'about___socialLinks___node_locale'
-  | 'about___profile___id'
-  | 'about___profile___parent___id'
-  | 'about___profile___parent___children'
-  | 'about___profile___children'
-  | 'about___profile___children___id'
-  | 'about___profile___children___children'
-  | 'about___profile___internal___content'
-  | 'about___profile___internal___contentDigest'
-  | 'about___profile___internal___description'
-  | 'about___profile___internal___fieldOwners'
-  | 'about___profile___internal___ignoreType'
-  | 'about___profile___internal___mediaType'
-  | 'about___profile___internal___owner'
-  | 'about___profile___internal___type'
-  | 'about___profile___contentful_id'
-  | 'about___profile___spaceId'
-  | 'about___profile___createdAt'
-  | 'about___profile___updatedAt'
-  | 'about___profile___file___url'
-  | 'about___profile___file___fileName'
-  | 'about___profile___file___contentType'
-  | 'about___profile___title'
-  | 'about___profile___description'
-  | 'about___profile___node_locale'
-  | 'about___profile___sys___type'
-  | 'about___profile___sys___revision'
-  | 'about___profile___fixed___base64'
-  | 'about___profile___fixed___tracedSVG'
-  | 'about___profile___fixed___aspectRatio'
-  | 'about___profile___fixed___width'
-  | 'about___profile___fixed___height'
-  | 'about___profile___fixed___src'
-  | 'about___profile___fixed___srcSet'
-  | 'about___profile___fixed___srcWebp'
-  | 'about___profile___fixed___srcSetWebp'
-  | 'about___profile___resolutions___base64'
-  | 'about___profile___resolutions___tracedSVG'
-  | 'about___profile___resolutions___aspectRatio'
-  | 'about___profile___resolutions___width'
-  | 'about___profile___resolutions___height'
-  | 'about___profile___resolutions___src'
-  | 'about___profile___resolutions___srcSet'
-  | 'about___profile___resolutions___srcWebp'
-  | 'about___profile___resolutions___srcSetWebp'
-  | 'about___profile___fluid___base64'
-  | 'about___profile___fluid___tracedSVG'
-  | 'about___profile___fluid___aspectRatio'
-  | 'about___profile___fluid___src'
-  | 'about___profile___fluid___srcSet'
-  | 'about___profile___fluid___srcWebp'
-  | 'about___profile___fluid___srcSetWebp'
-  | 'about___profile___fluid___sizes'
-  | 'about___profile___sizes___base64'
-  | 'about___profile___sizes___tracedSVG'
-  | 'about___profile___sizes___aspectRatio'
-  | 'about___profile___sizes___src'
-  | 'about___profile___sizes___srcSet'
-  | 'about___profile___sizes___srcWebp'
-  | 'about___profile___sizes___srcSetWebp'
-  | 'about___profile___sizes___sizes'
-  | 'about___profile___resize___base64'
-  | 'about___profile___resize___tracedSVG'
-  | 'about___profile___resize___src'
-  | 'about___profile___resize___width'
-  | 'about___profile___resize___height'
-  | 'about___profile___resize___aspectRatio'
-  | 'about___projects'
-  | 'about___projects___id'
-  | 'about___projects___parent___id'
-  | 'about___projects___parent___children'
-  | 'about___projects___children'
-  | 'about___projects___children___id'
-  | 'about___projects___children___children'
-  | 'about___projects___internal___content'
-  | 'about___projects___internal___contentDigest'
-  | 'about___projects___internal___description'
-  | 'about___projects___internal___fieldOwners'
-  | 'about___projects___internal___ignoreType'
-  | 'about___projects___internal___mediaType'
-  | 'about___projects___internal___owner'
-  | 'about___projects___internal___type'
-  | 'about___projects___name'
-  | 'about___projects___publishedDate'
-  | 'about___projects___repositoryUrl'
-  | 'about___projects___description'
-  | 'about___projects___projectUrl'
-  | 'about___projects___type'
-  | 'about___projects___logo___id'
-  | 'about___projects___logo___children'
-  | 'about___projects___logo___contentful_id'
-  | 'about___projects___logo___spaceId'
-  | 'about___projects___logo___createdAt'
-  | 'about___projects___logo___updatedAt'
-  | 'about___projects___logo___title'
-  | 'about___projects___logo___description'
-  | 'about___projects___logo___node_locale'
-  | 'about___projects___about'
-  | 'about___projects___about___id'
-  | 'about___projects___about___children'
-  | 'about___projects___about___name'
-  | 'about___projects___about___description'
-  | 'about___projects___about___roles'
-  | 'about___projects___about___mediumUser'
-  | 'about___projects___about___socialLinks'
-  | 'about___projects___about___projects'
-  | 'about___projects___about___spaceId'
-  | 'about___projects___about___contentful_id'
-  | 'about___projects___about___createdAt'
-  | 'about___projects___about___updatedAt'
-  | 'about___projects___about___node_locale'
-  | 'about___projects___spaceId'
-  | 'about___projects___contentful_id'
-  | 'about___projects___createdAt'
-  | 'about___projects___updatedAt'
-  | 'about___projects___sys___type'
-  | 'about___projects___sys___revision'
-  | 'about___projects___node_locale'
-  | 'about___aboutMe___id'
-  | 'about___aboutMe___parent___id'
-  | 'about___aboutMe___parent___children'
-  | 'about___aboutMe___children'
-  | 'about___aboutMe___children___id'
-  | 'about___aboutMe___children___children'
-  | 'about___aboutMe___internal___content'
-  | 'about___aboutMe___internal___contentDigest'
-  | 'about___aboutMe___internal___description'
-  | 'about___aboutMe___internal___fieldOwners'
-  | 'about___aboutMe___internal___ignoreType'
-  | 'about___aboutMe___internal___mediaType'
-  | 'about___aboutMe___internal___owner'
-  | 'about___aboutMe___internal___type'
-  | 'about___aboutMe___aboutMe'
-  | 'about___aboutMe___sys___type'
-  | 'about___aboutMe___childMarkdownRemark___id'
-  | 'about___aboutMe___childMarkdownRemark___excerpt'
-  | 'about___aboutMe___childMarkdownRemark___rawMarkdownBody'
-  | 'about___aboutMe___childMarkdownRemark___html'
-  | 'about___aboutMe___childMarkdownRemark___htmlAst'
-  | 'about___aboutMe___childMarkdownRemark___excerptAst'
-  | 'about___aboutMe___childMarkdownRemark___headings'
-  | 'about___aboutMe___childMarkdownRemark___timeToRead'
-  | 'about___aboutMe___childMarkdownRemark___tableOfContents'
-  | 'about___aboutMe___childMarkdownRemark___children'
-  | 'about___spaceId'
-  | 'about___contentful_id'
-  | 'about___createdAt'
-  | 'about___updatedAt'
-  | 'about___sys___type'
-  | 'about___sys___revision'
-  | 'about___node_locale'
-  | 'about___childContentfulAboutAboutMeTextNode___id'
-  | 'about___childContentfulAboutAboutMeTextNode___parent___id'
-  | 'about___childContentfulAboutAboutMeTextNode___parent___children'
-  | 'about___childContentfulAboutAboutMeTextNode___children'
-  | 'about___childContentfulAboutAboutMeTextNode___children___id'
-  | 'about___childContentfulAboutAboutMeTextNode___children___children'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___content'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___contentDigest'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___description'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___fieldOwners'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___ignoreType'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___mediaType'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___owner'
-  | 'about___childContentfulAboutAboutMeTextNode___internal___type'
-  | 'about___childContentfulAboutAboutMeTextNode___aboutMe'
-  | 'about___childContentfulAboutAboutMeTextNode___sys___type'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___id'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerpt'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___rawMarkdownBody'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___html'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___htmlAst'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___excerptAst'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___headings'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___timeToRead'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___tableOfContents'
-  | 'about___childContentfulAboutAboutMeTextNode___childMarkdownRemark___children'
   | 'spaceId'
   | 'contentful_id'
   | 'createdAt'
@@ -5129,7 +3430,352 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'sys___contentType___sys___linkType'
   | 'sys___contentType___sys___id'
   | 'sys___contentType___sys___contentful_id'
-  | 'node_locale';
+  | 'node_locale'
+  | 'person'
+  | 'person___id'
+  | 'person___parent___id'
+  | 'person___parent___parent___id'
+  | 'person___parent___parent___children'
+  | 'person___parent___children'
+  | 'person___parent___children___id'
+  | 'person___parent___children___children'
+  | 'person___parent___internal___content'
+  | 'person___parent___internal___contentDigest'
+  | 'person___parent___internal___description'
+  | 'person___parent___internal___fieldOwners'
+  | 'person___parent___internal___ignoreType'
+  | 'person___parent___internal___mediaType'
+  | 'person___parent___internal___owner'
+  | 'person___parent___internal___type'
+  | 'person___children'
+  | 'person___children___id'
+  | 'person___children___parent___id'
+  | 'person___children___parent___children'
+  | 'person___children___children'
+  | 'person___children___children___id'
+  | 'person___children___children___children'
+  | 'person___children___internal___content'
+  | 'person___children___internal___contentDigest'
+  | 'person___children___internal___description'
+  | 'person___children___internal___fieldOwners'
+  | 'person___children___internal___ignoreType'
+  | 'person___children___internal___mediaType'
+  | 'person___children___internal___owner'
+  | 'person___children___internal___type'
+  | 'person___internal___content'
+  | 'person___internal___contentDigest'
+  | 'person___internal___description'
+  | 'person___internal___fieldOwners'
+  | 'person___internal___ignoreType'
+  | 'person___internal___mediaType'
+  | 'person___internal___owner'
+  | 'person___internal___type'
+  | 'person___name'
+  | 'person___title'
+  | 'person___company'
+  | 'person___roles'
+  | 'person___email'
+  | 'person___facebook'
+  | 'person___twitter'
+  | 'person___github'
+  | 'person___profile___id'
+  | 'person___profile___parent___id'
+  | 'person___profile___parent___children'
+  | 'person___profile___children'
+  | 'person___profile___children___id'
+  | 'person___profile___children___children'
+  | 'person___profile___internal___content'
+  | 'person___profile___internal___contentDigest'
+  | 'person___profile___internal___description'
+  | 'person___profile___internal___fieldOwners'
+  | 'person___profile___internal___ignoreType'
+  | 'person___profile___internal___mediaType'
+  | 'person___profile___internal___owner'
+  | 'person___profile___internal___type'
+  | 'person___profile___contentful_id'
+  | 'person___profile___spaceId'
+  | 'person___profile___createdAt'
+  | 'person___profile___updatedAt'
+  | 'person___profile___file___url'
+  | 'person___profile___file___fileName'
+  | 'person___profile___file___contentType'
+  | 'person___profile___title'
+  | 'person___profile___description'
+  | 'person___profile___node_locale'
+  | 'person___profile___sys___type'
+  | 'person___profile___sys___revision'
+  | 'person___profile___fixed___base64'
+  | 'person___profile___fixed___tracedSVG'
+  | 'person___profile___fixed___aspectRatio'
+  | 'person___profile___fixed___width'
+  | 'person___profile___fixed___height'
+  | 'person___profile___fixed___src'
+  | 'person___profile___fixed___srcSet'
+  | 'person___profile___fixed___srcWebp'
+  | 'person___profile___fixed___srcSetWebp'
+  | 'person___profile___resolutions___base64'
+  | 'person___profile___resolutions___tracedSVG'
+  | 'person___profile___resolutions___aspectRatio'
+  | 'person___profile___resolutions___width'
+  | 'person___profile___resolutions___height'
+  | 'person___profile___resolutions___src'
+  | 'person___profile___resolutions___srcSet'
+  | 'person___profile___resolutions___srcWebp'
+  | 'person___profile___resolutions___srcSetWebp'
+  | 'person___profile___fluid___base64'
+  | 'person___profile___fluid___tracedSVG'
+  | 'person___profile___fluid___aspectRatio'
+  | 'person___profile___fluid___src'
+  | 'person___profile___fluid___srcSet'
+  | 'person___profile___fluid___srcWebp'
+  | 'person___profile___fluid___srcSetWebp'
+  | 'person___profile___fluid___sizes'
+  | 'person___profile___sizes___base64'
+  | 'person___profile___sizes___tracedSVG'
+  | 'person___profile___sizes___aspectRatio'
+  | 'person___profile___sizes___src'
+  | 'person___profile___sizes___srcSet'
+  | 'person___profile___sizes___srcWebp'
+  | 'person___profile___sizes___srcSetWebp'
+  | 'person___profile___sizes___sizes'
+  | 'person___profile___resize___base64'
+  | 'person___profile___resize___tracedSVG'
+  | 'person___profile___resize___src'
+  | 'person___profile___resize___width'
+  | 'person___profile___resize___height'
+  | 'person___profile___resize___aspectRatio'
+  | 'person___image___id'
+  | 'person___image___parent___id'
+  | 'person___image___parent___children'
+  | 'person___image___children'
+  | 'person___image___children___id'
+  | 'person___image___children___children'
+  | 'person___image___internal___content'
+  | 'person___image___internal___contentDigest'
+  | 'person___image___internal___description'
+  | 'person___image___internal___fieldOwners'
+  | 'person___image___internal___ignoreType'
+  | 'person___image___internal___mediaType'
+  | 'person___image___internal___owner'
+  | 'person___image___internal___type'
+  | 'person___image___contentful_id'
+  | 'person___image___spaceId'
+  | 'person___image___createdAt'
+  | 'person___image___updatedAt'
+  | 'person___image___file___url'
+  | 'person___image___file___fileName'
+  | 'person___image___file___contentType'
+  | 'person___image___title'
+  | 'person___image___description'
+  | 'person___image___node_locale'
+  | 'person___image___sys___type'
+  | 'person___image___sys___revision'
+  | 'person___image___fixed___base64'
+  | 'person___image___fixed___tracedSVG'
+  | 'person___image___fixed___aspectRatio'
+  | 'person___image___fixed___width'
+  | 'person___image___fixed___height'
+  | 'person___image___fixed___src'
+  | 'person___image___fixed___srcSet'
+  | 'person___image___fixed___srcWebp'
+  | 'person___image___fixed___srcSetWebp'
+  | 'person___image___resolutions___base64'
+  | 'person___image___resolutions___tracedSVG'
+  | 'person___image___resolutions___aspectRatio'
+  | 'person___image___resolutions___width'
+  | 'person___image___resolutions___height'
+  | 'person___image___resolutions___src'
+  | 'person___image___resolutions___srcSet'
+  | 'person___image___resolutions___srcWebp'
+  | 'person___image___resolutions___srcSetWebp'
+  | 'person___image___fluid___base64'
+  | 'person___image___fluid___tracedSVG'
+  | 'person___image___fluid___aspectRatio'
+  | 'person___image___fluid___src'
+  | 'person___image___fluid___srcSet'
+  | 'person___image___fluid___srcWebp'
+  | 'person___image___fluid___srcSetWebp'
+  | 'person___image___fluid___sizes'
+  | 'person___image___sizes___base64'
+  | 'person___image___sizes___tracedSVG'
+  | 'person___image___sizes___aspectRatio'
+  | 'person___image___sizes___src'
+  | 'person___image___sizes___srcSet'
+  | 'person___image___sizes___srcWebp'
+  | 'person___image___sizes___srcSetWebp'
+  | 'person___image___sizes___sizes'
+  | 'person___image___resize___base64'
+  | 'person___image___resize___tracedSVG'
+  | 'person___image___resize___src'
+  | 'person___image___resize___width'
+  | 'person___image___resize___height'
+  | 'person___image___resize___aspectRatio'
+  | 'person___socialLinks'
+  | 'person___socialLinks___id'
+  | 'person___socialLinks___parent___id'
+  | 'person___socialLinks___parent___children'
+  | 'person___socialLinks___children'
+  | 'person___socialLinks___children___id'
+  | 'person___socialLinks___children___children'
+  | 'person___socialLinks___internal___content'
+  | 'person___socialLinks___internal___contentDigest'
+  | 'person___socialLinks___internal___description'
+  | 'person___socialLinks___internal___fieldOwners'
+  | 'person___socialLinks___internal___ignoreType'
+  | 'person___socialLinks___internal___mediaType'
+  | 'person___socialLinks___internal___owner'
+  | 'person___socialLinks___internal___type'
+  | 'person___socialLinks___name'
+  | 'person___socialLinks___url'
+  | 'person___socialLinks___fontAwesomeIcon'
+  | 'person___socialLinks___spaceId'
+  | 'person___socialLinks___contentful_id'
+  | 'person___socialLinks___createdAt'
+  | 'person___socialLinks___updatedAt'
+  | 'person___socialLinks___sys___type'
+  | 'person___socialLinks___sys___revision'
+  | 'person___socialLinks___node_locale'
+  | 'person___socialLinks___person'
+  | 'person___socialLinks___person___id'
+  | 'person___socialLinks___person___children'
+  | 'person___socialLinks___person___name'
+  | 'person___socialLinks___person___title'
+  | 'person___socialLinks___person___company'
+  | 'person___socialLinks___person___roles'
+  | 'person___socialLinks___person___email'
+  | 'person___socialLinks___person___facebook'
+  | 'person___socialLinks___person___twitter'
+  | 'person___socialLinks___person___github'
+  | 'person___socialLinks___person___socialLinks'
+  | 'person___socialLinks___person___blog_post'
+  | 'person___socialLinks___person___spaceId'
+  | 'person___socialLinks___person___contentful_id'
+  | 'person___socialLinks___person___createdAt'
+  | 'person___socialLinks___person___updatedAt'
+  | 'person___socialLinks___person___node_locale'
+  | 'person___blog_post'
+  | 'person___blog_post___id'
+  | 'person___blog_post___parent___id'
+  | 'person___blog_post___parent___children'
+  | 'person___blog_post___children'
+  | 'person___blog_post___children___id'
+  | 'person___blog_post___children___children'
+  | 'person___blog_post___internal___content'
+  | 'person___blog_post___internal___contentDigest'
+  | 'person___blog_post___internal___description'
+  | 'person___blog_post___internal___fieldOwners'
+  | 'person___blog_post___internal___ignoreType'
+  | 'person___blog_post___internal___mediaType'
+  | 'person___blog_post___internal___owner'
+  | 'person___blog_post___internal___type'
+  | 'person___blog_post___title'
+  | 'person___blog_post___slug'
+  | 'person___blog_post___publishDate'
+  | 'person___blog_post___tags'
+  | 'person___blog_post___heroImage___id'
+  | 'person___blog_post___heroImage___children'
+  | 'person___blog_post___heroImage___contentful_id'
+  | 'person___blog_post___heroImage___spaceId'
+  | 'person___blog_post___heroImage___createdAt'
+  | 'person___blog_post___heroImage___updatedAt'
+  | 'person___blog_post___heroImage___title'
+  | 'person___blog_post___heroImage___description'
+  | 'person___blog_post___heroImage___node_locale'
+  | 'person___blog_post___author___id'
+  | 'person___blog_post___author___children'
+  | 'person___blog_post___author___name'
+  | 'person___blog_post___author___title'
+  | 'person___blog_post___author___company'
+  | 'person___blog_post___author___roles'
+  | 'person___blog_post___author___email'
+  | 'person___blog_post___author___facebook'
+  | 'person___blog_post___author___twitter'
+  | 'person___blog_post___author___github'
+  | 'person___blog_post___author___socialLinks'
+  | 'person___blog_post___author___blog_post'
+  | 'person___blog_post___author___spaceId'
+  | 'person___blog_post___author___contentful_id'
+  | 'person___blog_post___author___createdAt'
+  | 'person___blog_post___author___updatedAt'
+  | 'person___blog_post___author___node_locale'
+  | 'person___blog_post___description___id'
+  | 'person___blog_post___description___children'
+  | 'person___blog_post___description___description'
+  | 'person___blog_post___body___id'
+  | 'person___blog_post___body___children'
+  | 'person___blog_post___body___body'
+  | 'person___blog_post___spaceId'
+  | 'person___blog_post___contentful_id'
+  | 'person___blog_post___createdAt'
+  | 'person___blog_post___updatedAt'
+  | 'person___blog_post___sys___type'
+  | 'person___blog_post___sys___revision'
+  | 'person___blog_post___node_locale'
+  | 'person___blog_post___childContentfulBlogPostDescriptionTextNode___id'
+  | 'person___blog_post___childContentfulBlogPostDescriptionTextNode___children'
+  | 'person___blog_post___childContentfulBlogPostDescriptionTextNode___description'
+  | 'person___blog_post___childContentfulBlogPostBodyTextNode___id'
+  | 'person___blog_post___childContentfulBlogPostBodyTextNode___children'
+  | 'person___blog_post___childContentfulBlogPostBodyTextNode___body'
+  | 'person___shortBio___id'
+  | 'person___shortBio___parent___id'
+  | 'person___shortBio___parent___children'
+  | 'person___shortBio___children'
+  | 'person___shortBio___children___id'
+  | 'person___shortBio___children___children'
+  | 'person___shortBio___internal___content'
+  | 'person___shortBio___internal___contentDigest'
+  | 'person___shortBio___internal___description'
+  | 'person___shortBio___internal___fieldOwners'
+  | 'person___shortBio___internal___ignoreType'
+  | 'person___shortBio___internal___mediaType'
+  | 'person___shortBio___internal___owner'
+  | 'person___shortBio___internal___type'
+  | 'person___shortBio___shortBio'
+  | 'person___shortBio___sys___type'
+  | 'person___shortBio___childMarkdownRemark___id'
+  | 'person___shortBio___childMarkdownRemark___excerpt'
+  | 'person___shortBio___childMarkdownRemark___rawMarkdownBody'
+  | 'person___shortBio___childMarkdownRemark___html'
+  | 'person___shortBio___childMarkdownRemark___htmlAst'
+  | 'person___shortBio___childMarkdownRemark___excerptAst'
+  | 'person___shortBio___childMarkdownRemark___headings'
+  | 'person___shortBio___childMarkdownRemark___timeToRead'
+  | 'person___shortBio___childMarkdownRemark___tableOfContents'
+  | 'person___shortBio___childMarkdownRemark___children'
+  | 'person___spaceId'
+  | 'person___contentful_id'
+  | 'person___createdAt'
+  | 'person___updatedAt'
+  | 'person___sys___type'
+  | 'person___sys___revision'
+  | 'person___node_locale'
+  | 'person___childContentfulPersonShortBioTextNode___id'
+  | 'person___childContentfulPersonShortBioTextNode___parent___id'
+  | 'person___childContentfulPersonShortBioTextNode___parent___children'
+  | 'person___childContentfulPersonShortBioTextNode___children'
+  | 'person___childContentfulPersonShortBioTextNode___children___id'
+  | 'person___childContentfulPersonShortBioTextNode___children___children'
+  | 'person___childContentfulPersonShortBioTextNode___internal___content'
+  | 'person___childContentfulPersonShortBioTextNode___internal___contentDigest'
+  | 'person___childContentfulPersonShortBioTextNode___internal___description'
+  | 'person___childContentfulPersonShortBioTextNode___internal___fieldOwners'
+  | 'person___childContentfulPersonShortBioTextNode___internal___ignoreType'
+  | 'person___childContentfulPersonShortBioTextNode___internal___mediaType'
+  | 'person___childContentfulPersonShortBioTextNode___internal___owner'
+  | 'person___childContentfulPersonShortBioTextNode___internal___type'
+  | 'person___childContentfulPersonShortBioTextNode___shortBio'
+  | 'person___childContentfulPersonShortBioTextNode___sys___type'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___id'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___excerpt'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___rawMarkdownBody'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___html'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___htmlAst'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___excerptAst'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___headings'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___timeToRead'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___tableOfContents'
+  | 'person___childContentfulPersonShortBioTextNode___childMarkdownRemark___children';
 
 export type ContentfulSocialLinkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5139,13 +3785,13 @@ export type ContentfulSocialLinkFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
   fontAwesomeIcon?: Maybe<StringQueryOperatorInput>;
-  about?: Maybe<ContentfulAboutFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulSocialLinkSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  person?: Maybe<ContentfulPersonFilterListInput>;
 };
 
 export type ContentfulSocialLinkFilterListInput = {
@@ -6835,26 +5481,18 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
+  contentfulPersonShortBioTextNode?: Maybe<ContentfulPersonShortBioTextNode>;
+  allContentfulPersonShortBioTextNode: ContentfulPersonShortBioTextNodeConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
-  contentfulDante?: Maybe<ContentfulDante>;
-  allContentfulDante: ContentfulDanteConnection;
-  contentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNode>;
-  allContentfulAboutAboutMeTextNode: ContentfulAboutAboutMeTextNodeConnection;
-  contentfulAbout?: Maybe<ContentfulAbout>;
-  allContentfulAbout: ContentfulAboutConnection;
   contentfulSocialLink?: Maybe<ContentfulSocialLink>;
   allContentfulSocialLink: ContentfulSocialLinkConnection;
-  contentfulProject?: Maybe<ContentfulProject>;
-  allContentfulProject: ContentfulProjectConnection;
   contentfulBlogPostBodyTextNode?: Maybe<ContentfulBlogPostBodyTextNode>;
   allContentfulBlogPostBodyTextNode: ContentfulBlogPostBodyTextNodeConnection;
   contentfulBlogPostDescriptionTextNode?: Maybe<ContentfulBlogPostDescriptionTextNode>;
   allContentfulBlogPostDescriptionTextNode: ContentfulBlogPostDescriptionTextNodeConnection;
   contentfulBlogPost?: Maybe<ContentfulBlogPost>;
   allContentfulBlogPost: ContentfulBlogPostConnection;
-  contentfulPersonShortBioTextNode?: Maybe<ContentfulPersonShortBioTextNode>;
-  allContentfulPersonShortBioTextNode: ContentfulPersonShortBioTextNodeConnection;
   contentfulPerson?: Maybe<ContentfulPerson>;
   allContentfulPerson: ContentfulPersonConnection;
   contentfulContentType?: Maybe<ContentfulContentType>;
@@ -7058,6 +5696,25 @@ export type QueryAllImageSharpArgs = {
 };
 
 
+export type QueryContentfulPersonShortBioTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  shortBio?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
+};
+
+
+export type QueryAllContentfulPersonShortBioTextNodeArgs = {
+  filter?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
+  sort?: Maybe<ContentfulPersonShortBioTextNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -7088,79 +5745,6 @@ export type QueryAllContentfulAssetArgs = {
 };
 
 
-export type QueryContentfulDanteArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulDanteSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulDanteArgs = {
-  filter?: Maybe<ContentfulDanteFilterInput>;
-  sort?: Maybe<ContentfulDanteSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulAboutAboutMeTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutMe?: Maybe<StringQueryOperatorInput>;
-  sys?: Maybe<ContentfulAboutAboutMeTextNodeSysFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulAboutAboutMeTextNodeArgs = {
-  filter?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-  sort?: Maybe<ContentfulAboutAboutMeTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulAboutArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  roles?: Maybe<StringQueryOperatorInput>;
-  mediumUser?: Maybe<StringQueryOperatorInput>;
-  socialLinks?: Maybe<ContentfulSocialLinkFilterListInput>;
-  profile?: Maybe<ContentfulAssetFilterInput>;
-  projects?: Maybe<ContentfulProjectFilterListInput>;
-  aboutMe?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulAboutSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-  childContentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-};
-
-
-export type QueryAllContentfulAboutArgs = {
-  filter?: Maybe<ContentfulAboutFilterInput>;
-  sort?: Maybe<ContentfulAboutSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContentfulSocialLinkArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -7169,49 +5753,19 @@ export type QueryContentfulSocialLinkArgs = {
   name?: Maybe<StringQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
   fontAwesomeIcon?: Maybe<StringQueryOperatorInput>;
-  about?: Maybe<ContentfulAboutFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulSocialLinkSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  person?: Maybe<ContentfulPersonFilterListInput>;
 };
 
 
 export type QueryAllContentfulSocialLinkArgs = {
   filter?: Maybe<ContentfulSocialLinkFilterInput>;
   sort?: Maybe<ContentfulSocialLinkSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulProjectArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  publishedDate?: Maybe<DateQueryOperatorInput>;
-  repositoryUrl?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  projectUrl?: Maybe<StringQueryOperatorInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  logo?: Maybe<ContentfulAssetFilterInput>;
-  about?: Maybe<ContentfulAboutFilterListInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulProjectSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulProjectArgs = {
-  filter?: Maybe<ContentfulProjectFilterInput>;
-  sort?: Maybe<ContentfulProjectSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -7287,25 +5841,6 @@ export type QueryAllContentfulBlogPostArgs = {
 };
 
 
-export type QueryContentfulPersonShortBioTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  shortBio?: Maybe<StringQueryOperatorInput>;
-  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulPersonShortBioTextNodeArgs = {
-  filter?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
-  sort?: Maybe<ContentfulPersonShortBioTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContentfulPersonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -7314,11 +5849,14 @@ export type QueryContentfulPersonArgs = {
   name?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
+  roles?: Maybe<StringQueryOperatorInput>;
   email?: Maybe<StringQueryOperatorInput>;
   facebook?: Maybe<StringQueryOperatorInput>;
   twitter?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
+  profile?: Maybe<ContentfulAssetFilterInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  socialLinks?: Maybe<ContentfulSocialLinkFilterListInput>;
   blog_post?: Maybe<ContentfulBlogPostFilterListInput>;
   shortBio?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
