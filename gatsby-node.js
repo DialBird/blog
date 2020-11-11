@@ -2,9 +2,14 @@ const path = require('path')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
+  const queryArgument =
+    process.env.NODE_ENV === 'production'
+      ? 'sort: { order: DESC, fields: [publishDate] }'
+      : 'sort: { order: DESC, fields: [publishDate] }, filter: { isSample: { eq: true } }'
   const result = await graphql(`
     {
-      allContentfulBlogPost(sort: { order: DESC, fields: [publishDate] }) {
+      allContentfulBlogPost(${queryArgument}) {
         edges {
           node {
             slug

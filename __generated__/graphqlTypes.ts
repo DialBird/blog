@@ -388,6 +388,7 @@ export type ContentfulBlogPost = Node & {
   slug?: Maybe<Scalars['String']>;
   publishDate?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  isSample?: Maybe<Scalars['Boolean']>;
   heroImage?: Maybe<ContentfulAsset>;
   author?: Maybe<ContentfulPerson>;
   description?: Maybe<ContentfulBlogPostDescriptionTextNode>;
@@ -968,6 +969,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'slug'
   | 'publishDate'
   | 'tags'
+  | 'isSample'
   | 'heroImage___id'
   | 'heroImage___parent___id'
   | 'heroImage___parent___parent___id'
@@ -1299,6 +1301,7 @@ export type ContentfulBlogPostFieldsEnum =
   | 'author___blog_post___slug'
   | 'author___blog_post___publishDate'
   | 'author___blog_post___tags'
+  | 'author___blog_post___isSample'
   | 'author___blog_post___heroImage___id'
   | 'author___blog_post___heroImage___children'
   | 'author___blog_post___heroImage___contentful_id'
@@ -1700,6 +1703,7 @@ export type ContentfulBlogPostFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   publishDate?: Maybe<DateQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  isSample?: Maybe<BooleanQueryOperatorInput>;
   heroImage?: Maybe<ContentfulAssetFilterInput>;
   author?: Maybe<ContentfulPersonFilterInput>;
   description?: Maybe<ContentfulBlogPostDescriptionTextNodeFilterInput>;
@@ -2450,6 +2454,7 @@ export type ContentfulPersonFieldsEnum =
   | 'socialLinks___person___blog_post___slug'
   | 'socialLinks___person___blog_post___publishDate'
   | 'socialLinks___person___blog_post___tags'
+  | 'socialLinks___person___blog_post___isSample'
   | 'socialLinks___person___blog_post___spaceId'
   | 'socialLinks___person___blog_post___contentful_id'
   | 'socialLinks___person___blog_post___createdAt'
@@ -2511,6 +2516,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___slug'
   | 'blog_post___publishDate'
   | 'blog_post___tags'
+  | 'blog_post___isSample'
   | 'blog_post___heroImage___id'
   | 'blog_post___heroImage___parent___id'
   | 'blog_post___heroImage___parent___children'
@@ -2636,6 +2642,7 @@ export type ContentfulPersonFieldsEnum =
   | 'blog_post___author___blog_post___slug'
   | 'blog_post___author___blog_post___publishDate'
   | 'blog_post___author___blog_post___tags'
+  | 'blog_post___author___blog_post___isSample'
   | 'blog_post___author___blog_post___spaceId'
   | 'blog_post___author___blog_post___contentful_id'
   | 'blog_post___author___blog_post___createdAt'
@@ -3672,6 +3679,7 @@ export type ContentfulSocialLinkFieldsEnum =
   | 'person___blog_post___slug'
   | 'person___blog_post___publishDate'
   | 'person___blog_post___tags'
+  | 'person___blog_post___isSample'
   | 'person___blog_post___heroImage___id'
   | 'person___blog_post___heroImage___children'
   | 'person___blog_post___heroImage___contentful_id'
@@ -5799,6 +5807,7 @@ export type QueryContentfulBlogPostArgs = {
   slug?: Maybe<StringQueryOperatorInput>;
   publishDate?: Maybe<DateQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  isSample?: Maybe<BooleanQueryOperatorInput>;
   heroImage?: Maybe<ContentfulAssetFilterInput>;
   author?: Maybe<ContentfulPersonFilterInput>;
   description?: Maybe<ContentfulBlogPostDescriptionTextNodeFilterInput>;
