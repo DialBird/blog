@@ -5481,8 +5481,6 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
-  contentfulPersonShortBioTextNode?: Maybe<ContentfulPersonShortBioTextNode>;
-  allContentfulPersonShortBioTextNode: ContentfulPersonShortBioTextNodeConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
   contentfulSocialLink?: Maybe<ContentfulSocialLink>;
@@ -5493,6 +5491,8 @@ export type Query = {
   allContentfulBlogPostDescriptionTextNode: ContentfulBlogPostDescriptionTextNodeConnection;
   contentfulBlogPost?: Maybe<ContentfulBlogPost>;
   allContentfulBlogPost: ContentfulBlogPostConnection;
+  contentfulPersonShortBioTextNode?: Maybe<ContentfulPersonShortBioTextNode>;
+  allContentfulPersonShortBioTextNode: ContentfulPersonShortBioTextNodeConnection;
   contentfulPerson?: Maybe<ContentfulPerson>;
   allContentfulPerson: ContentfulPersonConnection;
   contentfulContentType?: Maybe<ContentfulContentType>;
@@ -5696,25 +5696,6 @@ export type QueryAllImageSharpArgs = {
 };
 
 
-export type QueryContentfulPersonShortBioTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  shortBio?: Maybe<StringQueryOperatorInput>;
-  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulPersonShortBioTextNodeArgs = {
-  filter?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
-  sort?: Maybe<ContentfulPersonShortBioTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -5836,6 +5817,25 @@ export type QueryContentfulBlogPostArgs = {
 export type QueryAllContentfulBlogPostArgs = {
   filter?: Maybe<ContentfulBlogPostFilterInput>;
   sort?: Maybe<ContentfulBlogPostSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulPersonShortBioTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  shortBio?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulPersonShortBioTextNodeSysFilterInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
+};
+
+
+export type QueryAllContentfulPersonShortBioTextNodeArgs = {
+  filter?: Maybe<ContentfulPersonShortBioTextNodeFilterInput>;
+  sort?: Maybe<ContentfulPersonShortBioTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
